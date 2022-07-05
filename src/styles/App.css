@@ -1,0 +1,721 @@
+/****************** BASE STYLES *******************/
+/*
+1em = 16px
+1.6rem = 16px
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /* 16px */
+}
+
+body {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  color: #555555;
+}
+
+
+
+#root {
+  min-height: 100vh;
+}
+
+.arc_container {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+
+/**************************************/
+
+
+/*******HOMEVIEW HEADER ************/
+
+.homeview_header_container {
+  height: 10rem;
+  background-color: #3d3c4a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  padding: 2rem;
+  text-align:center;
+}
+
+.arc_header_homeview {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.arc_subheader_homeview {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.3rem;
+}
+
+#arc_profile,#arc_menu {
+  font-size:3rem;
+}
+
+/********************************/
+
+/* REGISTRATION LOGIN HEADER & LOGIN OR REGISTER COMPONENTS */
+.registration_login_header_container {
+  height: 18rem;
+  background-color: #3d3c4a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+.arc_header {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.arc_subheader {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.4rem;
+}
+
+.arc_login {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  flex: 1;
+}
+
+.arc_new_account .arc_next_element {
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.arc_login .arc_generic_input_container {
+  margin: 2rem 0;
+}
+
+input {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.arc_forgot_password {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.4rem;
+  color: #909090;
+  margin: 0rem 1rem 0 0;
+  cursor: pointer;
+}
+
+.arc_login_button {
+  background-color: #7cc684;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.arc_new_account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  color: #909090;
+  font-size: 1.4rem;
+}
+
+.arc_create_account {
+  text-decoration: underline;
+  color: #ff9999;
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+
+.arc_terms_conditions_privacy_policy {
+  font-size: 1.2rem;
+  color: #909090;
+  margin-top: 2rem;
+  text-align: center;
+  margin: 5rem;
+}
+
+.arc_t_c,
+.arc_p_p {
+  margin: 0 0.5rem;
+  text-decoration: underline;
+  color: #ff9999;
+  font-weight: 400;
+}
+
+.arc_checkbox_question {
+  color: #909090;
+}
+
+/************************************************/
+
+/* Terms&ConditionsView*/
+
+.arc_t_c_view {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.arc_t_c_intro,
+.arc_t_c_heading,
+.arc_t_c_subheading {
+  margin: 1rem 0;
+}
+
+.arc_t_c_view_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+/************************************************/
+
+/* NextElement + BackElement + Container */
+
+.arc_button_container {
+  display: flex;
+  position: relative;
+}
+
+.arc_next_element {
+  background-color: #7cc684;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.arc_next_element:hover {
+  background-color: #74c07c;
+}
+
+.arc_next_element:disabled {
+  background-color: rgb(161, 161, 161);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.arc_next_element:disabled .arc_next_copy {
+  flex: 1;
+}
+
+.arc_back_element {
+  background-color: #3d3c4a;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.arc_back_element:hover {
+  background-color: #2b2b35;
+}
+
+.arc_info {
+  position: absolute;
+  right: 2%;
+  color: white;
+  top: 27%;
+}
+
+.arc_info_popup {
+  position: absolute;
+  background-color: green;
+}
+
+/***********************************************/
+
+/*ProgressBarElement*/
+
+.arc_reg_stage_1,
+.arc_reg_stage_2,
+.arc_reg_stage_3 {
+  height: 1rem;
+  background-color: #70d07a;
+  border-radius: 0 0 0.2rem 0;
+}
+
+.arc_reg_stage_1 {
+  width: 33.3%;
+}
+
+.arc_reg_stage_2 {
+  width: 66.6%;
+}
+
+.arc_reg_stage_3 {
+  width: 100%;
+}
+
+/**********************************************/
+
+/************* RegistrationOneView ************/
+
+.arc_registration_one_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1;
+}
+
+.arc_container_reg_flex {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.arc_container_reg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.arc_registration_one_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.arc_registration_one_heading {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 4rem;
+}
+
+.arc_registration_org_container,
+.arc_registration_user_container {
+  margin: 3rem 0;
+}
+
+.arc_registration_one_heading,
+.arc_registration_one_organisation_btn,
+.arc_registration_one_org_desc,
+.arc_registration_one_user_btn,
+.arc_registration_one_user_desc {
+  padding: 0rem 3rem;
+}
+
+.arc_registration_one_org_desc,
+.arc_registration_one_user_desc {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.arc_registration_one_organisation_btn,
+.arc_registration_one_user_btn {
+  font-size: 1.8rem;
+  font-weight: 400;
+  background-color: #3d3c4a;
+  color: white;
+  text-align: center;
+  margin: 0 3rem 1rem 3rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/*********************************************/
+
+/************ RegistrationTwoView ***********/
+
+.arc_registration_two_container {
+  padding: 3rem;
+}
+
+.arc_registration_two_heading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.arc_registration_two_subheading {
+  margin-bottom: 4rem;
+}
+
+.arc_registration_two_heading,
+.arc_registration_two_subheading {
+  text-align: center;
+}
+
+.arc_registration_two_container .arc_generic_input_container {
+  margin-top: 3rem;
+}
+
+/*******************************************/
+
+/************ RegistrationThreeView ***********/
+
+.arc_registration_three_container {
+  padding: 3rem;
+  flex: 1;
+}
+
+.arc_registration_three_heading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.arc_registration_three_subheading {
+  margin-bottom: 4rem;
+}
+
+.arc_registration_three_heading,
+.arc_registration_three_subheading {
+  text-align: center;
+}
+
+.arc_registration_three_input_container .arc_generic_input_container,
+.arc_registration_three_input_container .arc_checkbox_container {
+  margin: 3rem 0;
+}
+
+.arc_option_select {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0 1.5rem 0;
+  border-radius: 0.5rem;
+  border: 0;
+  font-size: 1.2rem;
+}
+
+#cats,
+#dogs,
+#adoption,
+#fostering {
+  padding: 1rem 5rem;
+  margin: 1rem;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 3rem;
+  border: 1px solid #f0f0f0;
+}
+
+.arc_animal_selected_reg_3 {
+  border: 1.5px solid #7cc684 !important;
+}
+
+#fostering~.arc_form_validation {
+  margin-top: 0.5rem;
+}
+
+.arc_registration_three_container .arc_generic_input_container:nth-child(11) {
+  margin: 1.6rem 0;
+}
+
+/*******************************************/
+
+/************* GenericInput ***************/
+
+.arc_generic_input {
+  width: 100%;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.arc_generic_label {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #909090;
+}
+
+label.arc_generic_label {
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.arc_form_validation {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff7373;
+  margin-top: 1rem;
+}
+
+.arc_registration_three_container .arc_form_validation {
+  margin-top: -2rem;
+}
+
+.arc_fa_color {
+  color: #70d07a;
+}
+
+/*****************************************/
+
+/************* RadioButtonElement ***************/
+
+.arc_radio_buttons_container {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.arc_radio_buttons_container label {
+  padding: 0 1rem 0 1rem;
+}
+
+.arc_radio_buttons_container label:first-child {
+  padding: 0 1rem 0 0;
+}
+
+.arc_registration_org_container input,
+.arc_registration_user_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.arc_registration_org_container label,
+.arc_registration_user_container label {
+  display: flex;
+  background-color: #3d3c4a;
+  color: white;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.arc_registration_org_container label:hover,
+.arc_registration_user_container label:hover {
+  background-color: #2b2b35;
+}
+
+.arc_registration_org_container input:checked~label,
+.arc_registration_user_container input:checked~label {
+  background-color: #7cc684;
+}
+
+/*****************************************/
+
+/************* CheckBoxElement ***************/
+
+.arc_checkbox_container {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.arc_checkbox_question {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+.arc_checkbox_questions_container {
+  display: flex;
+}
+
+.arc_checkbox_option_one,
+.arc_checkbox_option_two {
+  display: flex;
+  align-items: center;
+}
+
+.arc_checkbox_option_one {
+  margin: 0 1rem 0 0;
+}
+
+.arc_checkbox_option_one label,
+.arc_checkbox_option_two label {
+  padding-right: 1rem;
+}
+
+.arc_checkbox_option_two {
+  margin: 0 1rem 0 1rem;
+}
+
+.arc_sub_checkbox {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/*****************************************/
+
+
+/********** PET CARD ELEMENT ************/
+
+.arc_pet_card_container {
+  display: block;
+  margin: 0 auto;
+  max-width: 335px;
+  margin-top:1rem;
+}
+
+.arc_pet_name {
+  font-family: 'Lexend Deca';
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.arc_pet_org {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.arc_pet_card_img {
+  height: 335px;
+  width: 335px;
+  object-fit: cover;
+}
+
+.arc_pet_card_mini_description {
+  margin-top: 1rem;
+  color:#6b6b6b;
+}
+
+
+
+.arc_pet_card_likes_details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  margin-top: 0.6rem;
+}
+
+.arc_pet_card_detail_container {
+  display:flex;
+  align-items:center;
+}
+
+.arc_pet_card_img_container {
+  position:relative;
+}
+
+.arc_likes {
+  font-size: 1.6rem;
+  display: flex;
+    align-items: center;
+}
+
+.arc_likes_qty {
+  font-size:1.1rem;
+  font-weight:900;
+}
+
+.arc_likes_fa_icon {
+  margin-right: 0.8rem;
+  font-size: 2rem;
+  color:palevioletred;
+}
+
+.arc_detail_styles {
+
+  border-radius: 5rem;
+  padding: 0.2rem 1.7rem;
+  color: white;
+  font-weight: 600;
+  margin-right:1rem;
+}
+
+.arc_detail_styles:last-child {
+  margin-right:0;
+}
+
+.arc_pet_card_detail_age {
+  background-color: #B7AAE3;
+}
+
+.arc_pet_card_detail_size {
+  background-color: #F78BA6;
+}
+
+.arc_pet_card_detail_gender {
+  background-color: #F0BA89;
+}
+
+.arc_more_descriptor {
+  color:lightslategray;
+}
+
+.arc_reserved{
+  font-family: 'Lexend Deca';
+  font-weight: 300;
+  color: white;
+  background-color: #FE9090;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  position: absolute;
+    bottom: 0.5rem;
+    padding: 1rem;
+} 
+/**************************************/
+
+
+/******** FULL DETAILS PET CARD ******/
+.arc_pet_card_full_description {
+  margin-top:2rem;
+
+}
+.arc_pet_card_full_points,.arc_pet_card_full_description {
+  font-size:1.5rem;
+  color:#6b6b6b;
+}
+
+.arc_pet_card_full_description p {
+  margin: 1.5rem 0;
+  
+}
+/*************************************/
+
+
+/******** HOMEVIEW CONTAINER *********/
+
+
+.arc_container_homeview {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/***********************************/
