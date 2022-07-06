@@ -73,7 +73,7 @@ body {
 /* REGISTRATION LOGIN HEADER & LOGIN OR REGISTER COMPONENTS */
 .registration_login_header_container {
   height: 18rem;
-  background-color: #3d3c4a;
+  background-color: #3d405b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,10 +89,12 @@ body {
 }
 
 .arc_header_knightcat {
-  font-family: 'Bungee Hairline', cursive;
+  font-family: 'Bungee', cursive;
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
   font-weight:bold;
+  letter-spacing: 1px;
+  
 }
 
 .arc_subheader {
@@ -100,19 +102,20 @@ body {
   font-size: 1.4rem;
   font-weight:bold;
   text-align:center;
+  
 }
 
 .arc_login {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  margin-top: 2rem;
   position: relative;
   flex: 1;
 }
 
 .arc_logo svg {
-  min-width:100px;
+  min-width:8rem;
+  padding-bottom:1rem;
 }
 
 .arc_new_account .arc_next_element {
@@ -195,15 +198,32 @@ input:focus {
 .arc_t_c_view {
   display: flex;
   flex-direction: column;
-  padding: 3rem;
   text-align: center;
   font-size: 1.4rem;
+  color: slategrey;
+  padding:0;
 }
 
+.arc_t_c_view.ts_cs div {
+  font-family:'Roboto', sans-serif;
+}
+.arc_t_c_view.ts_cs {
+  padding:3rem;
+}
+
+.arc_t_c_intro div {
+  margin-top:1rem;
+}
+.arc_t_c_intro p {
+  font-size:2rem;
+}
 .arc_t_c_intro,
 .arc_t_c_heading,
 .arc_t_c_subheading {
   margin: 1rem 0;
+  font-family: 'Bungee',cursive;
+  text-align: center;
+  letter-spacing: .5px;
 }
 
 .arc_t_c_view_container {
@@ -211,6 +231,10 @@ input:focus {
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+}
+
+.arc_t_c_view_container div {
+  text-align: left;
 }
 
 /************************************************/
@@ -223,7 +247,7 @@ input:focus {
 }
 
 .arc_next_element {
-  background-color: #7cc684;
+  background-color: #81b29a;
   color: white;
   text-align: center;
   cursor: pointer;
@@ -232,10 +256,12 @@ input:focus {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.5rem;
+  font-family: 'Bungee Hairline', cursive;
+  font-weight:bold;
 }
 
 .arc_next_element:hover {
-  background-color: #74c07c;
+  background-color: #98bfac;
 }
 
 .arc_next_element:disabled {
@@ -250,7 +276,7 @@ input:focus {
 }
 
 .arc_back_element {
-  background-color: #3d3c4a;
+  background-color: #3d405b;
   color: white;
   text-align: center;
   cursor: pointer;
@@ -262,7 +288,7 @@ input:focus {
 }
 
 .arc_back_element:hover {
-  background-color: #2b2b35;
+  background-color: #4e5275;
 }
 
 .arc_info {
@@ -285,7 +311,7 @@ input:focus {
 .arc_reg_stage_2,
 .arc_reg_stage_3 {
   height: 1rem;
-  background-color: #70d07a;
+  background-color: #81b29a;
   border-radius: 0 0 0.2rem 0;
 }
 
@@ -528,7 +554,7 @@ label.arc_generic_label {
 .arc_registration_org_container label,
 .arc_registration_user_container label {
   display: flex;
-  background-color: #3d3c4a;
+  background-color: #3d405b;
   color: white;
   padding: 1rem 2rem;
   margin: 1rem;
@@ -538,12 +564,12 @@ label.arc_generic_label {
 
 .arc_registration_org_container label:hover,
 .arc_registration_user_container label:hover {
-  background-color: #2b2b35;
+  background-color: #98bfac;
 }
 
 .arc_registration_org_container input:checked~label,
 .arc_registration_user_container input:checked~label {
-  background-color: #7cc684;
+  background-color: #81b29a;
 }
 
 /*****************************************/

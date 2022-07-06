@@ -11,7 +11,7 @@ export default function TermsAndConditionsView(props) {
       <div className="arc_container_reg">
         <RegistrationLoginHeaderElement />
         <div className="arc_t_c_view_container">
-          <div className="arc_t_c_view">
+          <div className="arc_t_c_view ts_cs">
             <div className="arc_t_c_intro">
               Animal Rescue Collective is a service platform which aims to
               support grassroots charities.

@@ -13,17 +13,17 @@ export default function LoginOrRegisterView(props) {
         <div className="arc_login">
           <div className="arc_t_c_view_container">
             <div className="arc_t_c_intro">
-              <p>It's not 1985 anymore..</p>
-              <p>The future is now.</p>
+              <p>The hero your home needs.</p>
             </div>
             <div className="arc_t_c_view">
               <div className="arc_t_c_intro">
-                <ul>
-                  <li>Top speed of 28.6 MPH</li>
-                  <li>Another feature</li>
-                  <li>Prices starting from £999</li>
-                  <li>Another feature </li>
-                </ul>
+                <div>24/7 SecureTech</div>
+                <div>Organic Charge Source</div>
+                <div>Range lock</div>
+                <div>Target Identifiers</div>
+                <div>Ultimate Protector Mode</div>
+                <div>Alarm and Assist</div>
+                <div>Encrypted to biofeedback scan</div>
               </div>
             </div>
           </div>
