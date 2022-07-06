@@ -22,7 +22,9 @@ export default function RegistrationOneView(props) {
           <div className="arc_container_reg_1">
             <ProgressBarElement stage="1" />
             <div className="arc_registration_one_container">
-              <div className="arc_registration_one_heading">Are you an...</div>
+              <div className="arc_registration_one_heading">
+                Select your status
+              </div>
               <div className="arc_registration_org_container">
                 <RadioButtonElement
                   onGenericInputChange={onGenericInputChange}
@@ -30,7 +32,7 @@ export default function RegistrationOneView(props) {
                   radioValue="org"
                   radioLabel="arc_org_id"
                   radioId="arc_org_id"
-                  radioCopy="We are an organisation / charity"
+                  radioCopy="Business"
                 />
 
                 <div className="arc_registration_one_org_desc">
@@ -46,7 +48,7 @@ export default function RegistrationOneView(props) {
                   radioValue="user"
                   radioLabel="arc_user_id"
                   radioId="arc_user_id"
-                  radioCopy="I am looking to adopt / foster"
+                  radioCopy="Private resident"
                 />
 
                 <div className="arc_registration_one_user_desc">
