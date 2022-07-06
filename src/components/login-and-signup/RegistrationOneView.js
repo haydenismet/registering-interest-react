@@ -22,9 +22,6 @@ export default function RegistrationOneView(props) {
           <div className="arc_container_reg_1">
             <ProgressBarElement stage="1" />
             <div className="arc_registration_one_container">
-              <div className="arc_registration_one_heading">
-                Select your status
-              </div>
               <div className="arc_registration_org_container">
                 <RadioButtonElement
                   onGenericInputChange={onGenericInputChange}

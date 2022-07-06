@@ -158,9 +158,12 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
   color: #909090;
   font-size: 1.4rem;
+}
+
+.arc_new_account p {
+  font-family:'Roboto',sans-serif;
 }
 
 .arc_create_account {
@@ -174,18 +177,19 @@ input:focus {
 .arc_terms_conditions_privacy_policy {
   font-size: 1.2rem;
   color: #909090;
-  margin-top: 2rem;
-  text-align: center;
-  margin: 5rem;
+  margin-top: 1rem;
+  font-family: 'Roboto',sans-serif;
 }
 
 .arc_t_c,
 .arc_p_p {
-  margin: 0 0.5rem;
+  margin: 1rem 0;
   text-decoration: underline;
   color: #ff9999;
   font-weight: 400;
 }
+
+
 
 .arc_checkbox_question {
   color: #909090;

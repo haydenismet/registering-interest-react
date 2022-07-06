@@ -28,7 +28,6 @@ export default function TermsAndConditionsView(props) {
             </div>
           </div>
           <div className="arc_t_c_element_end">
-            <TermsAndConditionsElement suffix="before continuing." />
             <div className="arc_button_container">
               <BackElement
                 backCopy="Back"
