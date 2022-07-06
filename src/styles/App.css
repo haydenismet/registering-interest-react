@@ -226,6 +226,20 @@ input:focus {
   letter-spacing: .5px;
 }
 
+.arc_t_c_intro.login_reg div {
+    margin: 2rem 0;
+    font-family: 'Roboto',sans-serif;
+    font-weight:bold;
+    letter-spacing: .5px;
+    display:flex;
+    align-items: center;
+}
+
+.arc_t_c_intro.login_reg div svg { 
+  min-width:18px;
+  margin-right:10px;
+}
+
 .arc_t_c_view_container {
   display: flex;
   flex-direction: column;
@@ -285,6 +299,8 @@ input:focus {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.5rem;
+  font-weight:bold;
+  font-family: 'Bungee Hairline', cursive;
 }
 
 .arc_back_element:hover {
