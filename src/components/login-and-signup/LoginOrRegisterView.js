@@ -26,7 +26,7 @@ export default function LoginOrRegisterView(props) {
                       />
                     </svg>
                   </span>
-                  24/7 SecureTech
+                  24/7 Security
                 </div>
                 <div>
                   <span>
@@ -40,7 +40,7 @@ export default function LoginOrRegisterView(props) {
                       />
                     </svg>
                   </span>
-                  Organic Charge Source
+                  Lifetime battery
                 </div>
                 <div>
                   <span>
@@ -68,7 +68,7 @@ export default function LoginOrRegisterView(props) {
                       />
                     </svg>
                   </span>
-                  Target Identifiers
+                  Target ID
                 </div>
                 <div>
                   <span>
@@ -82,7 +82,7 @@ export default function LoginOrRegisterView(props) {
                       />
                     </svg>
                   </span>
-                  Ultimate Protector Mode
+                  Protecc / Attacc Mode
                 </div>
                 <div>
                   <span>
@@ -96,7 +96,7 @@ export default function LoginOrRegisterView(props) {
                       />
                     </svg>
                   </span>
-                  Alarm and Assist
+                  Alarm Barrier
                 </div>
                 <div>
                   <span>
@@ -110,18 +110,15 @@ export default function LoginOrRegisterView(props) {
                       />
                     </svg>
                   </span>
-                  Encrypted to biofeedback scan
+                  Biofeedback encrypted
                 </div>
               </div>
             </div>
           </div>
           <div className="arc_new_account">
-            <p>
-              Register your interest today for exclusive pre-sale access to the
-              pioneering hoverboard.
-            </p>
+            <p>Sign up for weekly updates.</p>
             <NextElement
-              nextCopy="Register interest"
+              nextCopy="Register"
               handleViewClickNext={handleViewClickNext}
               view={view}
             />
