@@ -108,9 +108,10 @@ body {
 .arc_login {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 0 2rem;
   position: relative;
   flex: 1;
+  background-color:#f0f0f0;
 }
 
 .arc_logo svg {
@@ -185,7 +186,7 @@ input:focus {
 .arc_p_p {
   margin: 1rem 0;
   text-decoration: underline;
-  color: #ff9999;
+  color: #E3655B;
   font-weight: 400;
 }
 
@@ -224,19 +225,19 @@ input:focus {
 .arc_t_c_intro,
 .arc_t_c_heading,
 .arc_t_c_subheading {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   font-family: 'Bungee',cursive;
-  text-align: center;
+  font-weight: bold;
   letter-spacing: .5px;
 }
 
 .arc_t_c_intro.login_reg div {
     margin: 2rem 0;
-    font-family: 'Roboto',sans-serif;
     font-weight:bold;
     letter-spacing: .5px;
     display:flex;
     align-items: center;
+    color:#5d5d5d;
 }
 
 .arc_t_c_intro.login_reg div svg { 
@@ -247,8 +248,7 @@ input:focus {
 .arc_t_c_view_container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
+
 }
 
 .arc_t_c_view_container div {
@@ -265,7 +265,7 @@ input:focus {
 }
 
 .arc_next_element {
-  background-color: #81b29a;
+  background-color: #E3655B;
   color: white;
   text-align: center;
   cursor: pointer;
@@ -359,17 +359,16 @@ input:focus {
 }
 
 .arc_container_reg_flex {
-  justify-content: space-between;
+
   display: flex;
   flex-direction: column;
-  flex: 1;
+ 
 }
 
 .arc_container_reg {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+  
 }
 
 .arc_registration_one_container {
