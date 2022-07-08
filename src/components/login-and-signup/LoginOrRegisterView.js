@@ -82,7 +82,7 @@ export default function LoginOrRegisterView(props) {
                       />
                     </svg>
                   </span>
-                  Protecc / Attacc Mode
+                  Guardian Accredited
                 </div>
                 <div>
                   <span>

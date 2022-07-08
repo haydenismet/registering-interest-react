@@ -29,46 +29,15 @@ body {
 
 #root {
   min-height: 100vh;
+  background-color: #f0f0f0;
 }
 
 .arc_container {
-  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
 }
 
 /**************************************/
-
-
-/*******HOMEVIEW HEADER ************/
-
-.homeview_header_container {
-  height: 10rem;
-  background-color: #3d3c4a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #ffffff;
-  padding: 2rem;
-  text-align:center;
-}
-
-.arc_header_homeview {
-  font-family: "Lexend Deca", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.arc_subheader_homeview {
-  font-family: "Red Hat Display", sans-serif;
-  font-size: 1.3rem;
-}
-
-#arc_profile,#arc_menu {
-  font-size:3rem;
-}
-
-/********************************/
 
 /* REGISTRATION LOGIN HEADER & LOGIN OR REGISTER COMPONENTS */
 .registration_login_header_container {
@@ -111,7 +80,6 @@ body {
   padding: 0 2rem;
   position: relative;
   flex: 1;
-  background-color:#f0f0f0;
 }
 
 .arc_logo svg {
