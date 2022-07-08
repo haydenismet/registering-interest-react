@@ -28,9 +28,7 @@ export default function NextElement(props) {
       ) : null}
       {info ? (
         <div className="arc_info_popup">
-          <p>
-            please select whether you are an organisation or user to continue.
-          </p>
+          <p>Commercial premises or private property</p>
           <button onClick={() => setInfo(false)}>x</button>
         </div>
       ) : null}

@@ -32,16 +32,12 @@ body {
   background-color: #f0f0f0;
 }
 
-.arc_container {
-  display: flex;
-  flex-direction: column;
-}
+
 
 /**************************************/
 
 /* REGISTRATION LOGIN HEADER & LOGIN OR REGISTER COMPONENTS */
 .registration_login_header_container {
-  height: 18rem;
   background-color: #3d405b;
   display: flex;
   flex-direction: column;
@@ -52,7 +48,6 @@ body {
 }
 
 .arc_header {
-  font-family: "Lexend Deca", sans-serif;
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
@@ -104,24 +99,7 @@ input:focus {
   outline: none;
 }
 
-.arc_forgot_password {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.4rem;
-  color: #909090;
-  margin: 0rem 1rem 0 0;
-  cursor: pointer;
-}
 
-.arc_login_button {
-  background-color: #7cc684;
-  padding: 1.5rem;
-  margin-top: 3rem;
-  color: white;
-  border-radius: 0.5rem;
-  text-align: center;
-  cursor: pointer;
-}
 
 .arc_new_account {
   display: flex;
@@ -229,9 +207,15 @@ input:focus {
 
 /* NextElement + BackElement + Container */
 
+.arc_button_container_on {
+  display:flex;
+}
+
 .arc_button_container {
   display: flex;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .arc_next_element {
@@ -244,8 +228,8 @@ input:focus {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.5rem;
-  font-family: 'DM Sans';
-  font-weight: 400;
+  font-family: 'Bungee Hairline', cursive;
+  font-weight: bold;
 }
 
 .arc_next_element:hover {
@@ -290,7 +274,32 @@ input:focus {
 
 .arc_info_popup {
   position: absolute;
-  background-color: green;
+  background-color: #E3655B;
+  top: -37px;
+  color: white;
+  display: flex;
+  padding: 0.5rem;
+  font-family: 'DM Sans';
+  width: 100%;
+  justify-content: center;
+}
+
+.arc_info_popup button {
+  font-size: 1.4rem;
+  padding: 0 0.5rem;
+  background-color: #E3655B;
+  border-style: none;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: #FFFFFF;
+  margin-left: 1rem;
+  margin: 5px 0 5px 25px;
+}
+
+.arc_info_popup p {
+  padding: 5px;
+    font-size: 1.3rem;
 }
 
 /***********************************************/

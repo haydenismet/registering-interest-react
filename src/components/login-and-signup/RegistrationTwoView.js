@@ -123,7 +123,7 @@ export default function RegistrationTwoView(props) {
           </div>
         </div>
 
-        <div className="arc_button_container">
+        <div className="arc_button_container_on">
           <BackElement
             backCopy="Back"
             handleViewClickBack={handleViewClickBack}

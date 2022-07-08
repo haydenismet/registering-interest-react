@@ -303,7 +303,7 @@ export default function RegistrationThreeView(props) {
             )}
           </div>
         </div>
-        <div className="arc_button_container">
+        <div className="arc_button_container_on">
           <BackElement
             backCopy="back"
             handleViewClickBack={handleViewClickBack}
@@ -311,7 +311,7 @@ export default function RegistrationThreeView(props) {
           />
           <NextElement
             regComplete={regComplete}
-            nextCopy="complete registration"
+            nextCopy="Register"
             handleViewClickNext={handleViewClickNext}
             view={view}
             isDisabled={
