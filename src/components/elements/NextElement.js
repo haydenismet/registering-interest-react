@@ -21,14 +21,14 @@ export default function NextElement(props) {
         {nextCopy}
       </button>
       {/* If isDisabled is true, show the question icon, with a useState to toggle modal */}
-      {isDisabled ? (
+      {isDisabled && view === 3 ? (
         <span className="arc_info" onClick={() => setInfo(true)}>
           <FontAwesomeIcon icon={faQuestionCircle} />
         </span>
       ) : null}
       {info ? (
         <div className="arc_info_popup">
-          <p>Commercial premises or private property</p>
+          <p>Please select a property type.</p>
           <button onClick={() => setInfo(false)}>x</button>
         </div>
       ) : null}

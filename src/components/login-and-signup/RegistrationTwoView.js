@@ -30,12 +30,12 @@ export default function RegistrationTwoView(props) {
       <div className="arc_container_reg">
         <ProgressBarElement stage="2" />
         <div className="arc_registration_two_container">
-          <div className="arc_registration_two_heading">Great to have you!</div>
+          <div className="arc_registration_two_heading">Nearly there...</div>
           <div className="arc_registration_two_subheading">
-            We can't wait to help you
+            A few more steps to secure priority access to <b>Knight Cat</b> for
             {context.registerAccount.user_type === "user"
-              ? " find your new companion!"
-              : " give pets their forever home!"}
+              ? " your home"
+              : " your commercial property"}
           </div>
           <GenericInput
             inputCategory={

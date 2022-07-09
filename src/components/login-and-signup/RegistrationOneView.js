@@ -29,13 +29,12 @@ export default function RegistrationOneView(props) {
                   radioValue="org"
                   radioLabel="arc_org_id"
                   radioId="arc_org_id"
-                  radioCopy="Business"
+                  radioCopy="Commercial"
                 />
 
                 <div className="arc_registration_one_org_desc">
-                  a grassroots organisation relying heavily on donations in
-                  order to keep animals cared for in your possession before
-                  adoption and/or fostering.
+                  Including but not limited to offices, restaurants, late night
+                  venues, etc.
                 </div>
               </div>
               <div className="arc_registration_user_container">
@@ -45,12 +44,12 @@ export default function RegistrationOneView(props) {
                   radioValue="user"
                   radioLabel="arc_user_id"
                   radioId="arc_user_id"
-                  radioCopy="Private resident"
+                  radioCopy="Homeowner"
                 />
 
                 <div className="arc_registration_one_user_desc">
-                  you're looking to help out and adopt animals in need,
-                  supporting grassroots organisations in the process
+                  Any type of home, from apartment buildings to detached
+                  housing.
                 </div>
               </div>
             </div>
