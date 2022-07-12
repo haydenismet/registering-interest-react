@@ -15,15 +15,10 @@ import useFormValidations from "../components/custom-hooks/useFormValidations.ho
 // You don't import the parseSessionStorage function as  this is directly called on input elements and will set context.registerAccount to sessionStorage, and subsequently pull from it if required */
 /* Context import for registerAccount and the useState set function   Its then set into context var for use, so registerAccount would be context.registerAccount here and anywhere else you use it */
 import { RegistrationContext } from "../components/context/RegistrationContext.context";
-import {
-  AuthContext,
-  AuthContextProvider,
-} from "../components/context/AuthContext.context";
 
 function App() {
   //Global reg object input
   const context = useContext(RegistrationContext);
-  const auth = useContext(AuthContext);
 
   //GenericInput hooks imports
   const {
@@ -91,11 +86,6 @@ function App() {
           <LoginOrRegisterView
             handleViewClickNext={handleViewClickNext}
             view={view}
-            onGenericInputChange={onGenericInputChange}
-            input={input}
-            inputTypeScrape={inputTypeScrape}
-            userEmail={userEmail}
-            userPassword={userPassword}
           />
         );
       case 2:
@@ -159,6 +149,9 @@ function App() {
           />
         );
 
+      case 6:
+        return <HomeView />;
+
       default:
         return <div className="whoops"> Whoops. </div>;
     }
@@ -166,11 +159,7 @@ function App() {
 
   return (
     <>
-      {auth.loggedIn ? (
-        <HomeView />
-      ) : (
-        <div className="arc_container">{returnRegistrationStage(view)}</div>
-      )}
+      <div className="arc_container">{returnRegistrationStage(view)}</div>
     </>
   );
 }

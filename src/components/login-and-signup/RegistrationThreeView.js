@@ -30,7 +30,6 @@ export default function RegistrationThreeView(props) {
     validateRehomingFee,
     handleViewClickBack,
     handleViewClickNext,
-    regComplete,
   } = props;
 
   const locationOptions = [
@@ -166,7 +165,7 @@ export default function RegistrationThreeView(props) {
   ];
 
   const context = useContext(RegistrationContext);
-  return !regComplete ? (
+  return (
     <>
       <RegistrationLoginHeaderElement />
       <div className="arc_container_reg">
@@ -310,7 +309,6 @@ export default function RegistrationThreeView(props) {
             view={view}
           />
           <NextElement
-            regComplete={regComplete}
             nextCopy="Register"
             handleViewClickNext={handleViewClickNext}
             view={view}
@@ -334,7 +332,5 @@ export default function RegistrationThreeView(props) {
         </div>
       </div>
     </>
-  ) : (
-    <HomeView />
   );
 }

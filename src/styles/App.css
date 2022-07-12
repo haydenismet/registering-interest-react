@@ -78,7 +78,7 @@ body {
 }
 
 .arc_logo svg {
-  min-width:8rem;
+  width:8rem;
   padding-bottom:1rem;
 }
 
@@ -189,7 +189,7 @@ input:focus {
 }
 
 .arc_t_c_intro.login_reg div svg { 
-  min-width:18px;
+  width:18px;
   margin-right:10px;
 }
 

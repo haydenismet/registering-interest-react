@@ -4,15 +4,13 @@ import "./styles/index.css";
 import App from "./containers/App.js";
 import reportWebVitals from "./reportWebVitals";
 import { RegistrationProvider } from "./components/context/RegistrationContext.context";
-import { AuthContextProvider } from "./components/context/AuthContext.context";
+
 /* RegistrationProvider is context to provide regTwoInput globally between components */
 ReactDOM.render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <RegistrationProvider>
-        <App />
-      </RegistrationProvider>
-    </AuthContextProvider>
+    <RegistrationProvider>
+      <App />
+    </RegistrationProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

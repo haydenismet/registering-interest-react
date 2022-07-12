@@ -12,7 +12,7 @@ export default function NextElement(props) {
     <>
       <button
         className="arc_next_element"
-        onClick={view === 5 ? onAccountRegister : handleViewClickNext}
+        onClick={handleViewClickNext}
         data-stage={view}
         disabled={
           isDisabled ? isDisabled : null

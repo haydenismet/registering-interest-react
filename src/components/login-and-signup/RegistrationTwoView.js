@@ -19,7 +19,6 @@ export default function RegistrationTwoView(props) {
     validateUserPassword,
     validateUserPasswordConfirm,
     input,
-    handleViewTwo,
     view,
   } = props;
 
@@ -131,7 +130,6 @@ export default function RegistrationTwoView(props) {
           <NextElement
             nextCopy="Continue"
             handleViewClickNext={handleViewClickNext}
-            handleViewTwo={handleViewTwo}
             isDisabled={
               validateUserName &&
               validateUserEmail &&
