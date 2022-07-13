@@ -18,8 +18,8 @@ function RegistrationProvider(props) {
     registered_charity: false,
     charity_no: "",
     rehoming_fee: "",
-    adoption: false,
-    foster: false,
+    knight_watch: false,
+    protection_barrier: false,
     cat: false,
     dog: false,
   });

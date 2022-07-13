@@ -5,8 +5,8 @@ export default function useHandleClicks() {
   let [view, setView] = useState(1); //SET back to 1 - this is to build homeview
   let [activeDog, setActiveDog] = useState(true);
   let [activeCat, setActiveCat] = useState(true);
-  let [activeAdoption, setActiveAdoption] = useState(true);
-  let [activeFoster, setActiveFoster] = useState(true);
+  let [activeKnightWatch, setActiveKnightWatch] = useState(true);
+  let [activeProtectionBarrier, setActiveProtectionBarrier] = useState(true);
   function handleViewClickNext() {
     /* handleViewClickNext is a function to say if the (view) is ready (from useState) (we do this so that the states are ready otherwise they might error if function tries to run before react has loaded), to then setView (set the variable called view) to the 1, which according to the switch case will render the first slide (login). We then attach this function to Reacts 'onClick' functionality  for an element. That way, when that element is clicked, we're saying setView the 'view' by 1, therefore corresponding to the next switch case and subsequently the corresponding component.   */
     if (view) {
@@ -48,18 +48,18 @@ export default function useHandleClicks() {
   }
 
   function handleClickToggleAdoption() {
-    setActiveAdoption(!activeAdoption);
+    setActiveKnightWatch(!activeKnightWatch);
     context.setRegisterAccount({
       ...context.registerAccount,
-      adoption: activeAdoption,
+      knight_watch: activeKnightWatch,
     });
   }
 
   function handleClickToggleFoster() {
-    setActiveFoster(!activeFoster);
+    setActiveProtectionBarrier(!activeProtectionBarrier);
     context.setRegisterAccount({
       ...context.registerAccount,
-      foster: activeFoster,
+      protection_barrier: activeProtectionBarrier,
     });
   }
 
@@ -74,7 +74,7 @@ export default function useHandleClicks() {
     handleClickToggleCat,
     handleClickToggleAdoption,
     handleClickToggleFoster,
-    activeAdoption,
-    activeFoster,
+    activeKnightWatch,
+    activeProtectionBarrier,
   };
 }

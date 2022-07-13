@@ -35,43 +35,37 @@ export default function RegistrationThreeView(props) {
   const locationOptions = [
     { value: "Please Select" },
     {
+      value: "London",
+    },
+    {
+      value: "North East",
+    },
+    {
+      value: "North West",
+    },
+    {
+      value: "Yorkshire",
+    },
+    {
+      value: "East Midlands",
+    },
+    {
       value: "West Midlands",
     },
     {
-      value: "Birmingham",
+      value: "South East",
     },
     {
-      value: "Halesowen",
+      value: "South West",
     },
     {
-      value: "Quinton",
+      value: "East of England",
     },
     {
-      value: "Selly Oak",
+      value: "Wales",
     },
     {
-      value: "Edgbaston",
-    },
-    {
-      value: "Moseley",
-    },
-    {
-      value: "Kings Heath",
-    },
-    {
-      value: "Northfield",
-    },
-    {
-      value: "Frankley",
-    },
-    {
-      value: "Shirley",
-    },
-    {
-      value: "Sheldon",
-    },
-    {
-      value: "Small Heath",
+      value: "Scotland",
     },
   ];
 
@@ -178,7 +172,7 @@ export default function RegistrationThreeView(props) {
           <div className="arc_registration_three_input_container">
             <GenericInput
               inputCategory={
-                context.registerAccount.user_type === "user"
+                context.registerAccount.user_type === "Personal"
                   ? "Where are you based?"
                   : "Where is your organisation based?"
               }
@@ -200,9 +194,9 @@ export default function RegistrationThreeView(props) {
             </div>
             <GenericInput
               inputCategory={
-                context.registerAccount.user_type === "user"
-                  ? "Distance from your chosen location"
-                  : "What distance do you allow potential adoptees/fosterer's?"
+                context.registerAccount.user_type === "Personal"
+                  ? "What distance perimeter should Knight Cat safeguard your home?"
+                  : "What distance perimeter should Knight Cat safeguard your business property?"
               }
               labelName="arc_rehoming_label"
               optionValue={distanceOptions}
@@ -220,13 +214,9 @@ export default function RegistrationThreeView(props) {
                 />
               )}
             </div>
-            <GenericInput
-              inputCategory="Optional : Upload a profile picture"
-              inputType="file"
-              labelName="arc_image_label"
-            />
+
             <>
-              {context.registerAccount.user_type === "org" ? (
+              {context.registerAccount.user_type === "Commercial" ? (
                 <GenericInput
                   inputCategory="Optional : Are you a UK charity registered organisation? "
                   inputType="text"
@@ -239,13 +229,13 @@ export default function RegistrationThreeView(props) {
 
             <ButtonToggleElement
               buttonQuestion={
-                context.registerAccount.user_type === "user"
-                  ? "What services are you interested in"
-                  : "What services do you offer"
+                context.registerAccount.user_type === "Personal"
+                  ? "What cover options would you like for your home?"
+                  : "What cover options would you like for your commercial property?"
               }
               handleClickToggle={handleClickToggleAdoption}
               active={activeAdoption}
-              idAndName="adoption"
+              idAndName="Knight Watch"
             />
             <ButtonToggleElement
               handleClickToggle={handleClickToggleFoster}
@@ -258,7 +248,7 @@ export default function RegistrationThreeView(props) {
               <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
             )}
 
-            {context.registerAccount.user_type === "org" ? (
+            {context.registerAccount.user_type === "Commercial" ? (
               <>
                 <GenericInput
                   inputCategory="Do you charge a rehoming fee?"
@@ -282,7 +272,7 @@ export default function RegistrationThreeView(props) {
 
             <ButtonToggleElement
               buttonQuestion={
-                context.registerAccount.user_type === "user"
+                context.registerAccount.user_type === "Personal"
                   ? "Animals I'm interested in"
                   : "Animals in your care"
               }
@@ -313,14 +303,14 @@ export default function RegistrationThreeView(props) {
             handleViewClickNext={handleViewClickNext}
             view={view}
             isDisabled={
-              context.registerAccount.user_type === "user"
+              context.registerAccount.user_type === "Personal"
                 ? validateUserLocation &&
                   validateUserDistance &&
                   validateAdoptionFoster &&
                   validateCatDog
                   ? false
                   : true
-                : context.registerAccount.user_type === "org"
+                : context.registerAccount.user_type === "Commercial"
                 ? validateCatDog &&
                   validateAdoptionFoster &&
                   validateRehomingFee

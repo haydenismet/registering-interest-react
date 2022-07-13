@@ -21,14 +21,8 @@ function App() {
   const context = useContext(RegistrationContext);
 
   //GenericInput hooks imports
-  const {
-    input,
-    inputTypeScrape,
-    onGenericInputChange,
-    settingFormOneValues,
-    userEmail,
-    userPassword,
-  } = useOnGenericInputChange();
+  const { input, inputTypeScrape, onGenericInputChange, settingFormOneValues } =
+    useOnGenericInputChange();
 
   //HandleClicks customHook imports
   const {

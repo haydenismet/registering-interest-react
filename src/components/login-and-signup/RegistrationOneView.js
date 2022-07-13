@@ -26,7 +26,7 @@ export default function RegistrationOneView(props) {
                 <RadioButtonElement
                   onGenericInputChange={onGenericInputChange}
                   radioName="arc_user_type_radio"
-                  radioValue="org"
+                  radioValue="Commercial"
                   radioLabel="arc_org_id"
                   radioId="arc_org_id"
                   radioCopy="Commercial"
@@ -41,7 +41,7 @@ export default function RegistrationOneView(props) {
                 <RadioButtonElement
                   onGenericInputChange={onGenericInputChange}
                   radioName="arc_user_type_radio"
-                  radioValue="user"
+                  radioValue="Personal"
                   radioLabel="arc_user_id"
                   radioId="arc_user_id"
                   radioCopy="Homeowner"

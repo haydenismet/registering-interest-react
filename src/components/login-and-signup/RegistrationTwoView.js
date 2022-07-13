@@ -32,13 +32,13 @@ export default function RegistrationTwoView(props) {
           <div className="arc_registration_two_heading">Nearly there...</div>
           <div className="arc_registration_two_subheading">
             A few more steps to secure priority access to <b>Knight Cat</b> for
-            {context.registerAccount.user_type === "user"
+            {context.registerAccount.user_type === "Personal"
               ? " your home"
               : " your commercial property"}
           </div>
           <GenericInput
             inputCategory={
-              context.registerAccount.user_type === "user"
+              context.registerAccount.user_type === "Personal"
                 ? "Name"
                 : "Organisation Name"
             }
