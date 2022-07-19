@@ -15,7 +15,6 @@ function RegistrationProvider(props) {
     user_location: "",
     user_distance: "",
     profile_picture: "",
-    registered_charity: false,
     charity_no: "",
     rehoming_fee: "",
     knight_watch: false,

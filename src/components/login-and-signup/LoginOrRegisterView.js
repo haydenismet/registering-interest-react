@@ -116,7 +116,7 @@ export default function LoginOrRegisterView(props) {
             </div>
           </div>
           <div className="arc_new_account">
-            <p>Sign up for weekly updates.</p>
+            <p>Sign up for presale access.</p>
             <NextElement
               nextCopy="Register"
               handleViewClickNext={handleViewClickNext}

@@ -115,46 +115,46 @@ export default function RegistrationThreeView(props) {
   const rehomingFee = [
     { value: "Please Select" },
     {
-      value: "£0",
+      value: "£500 - £1000",
     },
     {
-      value: "£10",
+      value: "£1000 - £3000",
     },
     {
-      value: "£20",
+      value: "£3000 - £5000",
     },
     {
-      value: "£30",
+      value: "£5000 - £10,000",
     },
     {
-      value: "£40",
+      value: "£10,000 - £20,000",
     },
     {
-      value: "£50",
+      value: "£20,000 - £50,000",
     },
     {
-      value: "£75",
+      value: "£50,000 - £100,000",
     },
     {
-      value: "£100",
+      value: "£100,000 - £250,000",
     },
     {
-      value: "£150",
+      value: "£250,000 - £500,000",
     },
     {
-      value: "£200",
+      value: "£1,000,000 - £3,000,000",
     },
     {
-      value: "£250",
+      value: "£3,000,000 - £5,000,000",
     },
     {
-      value: "£300",
+      value: "£5,000,000 - £10,000,000",
     },
     {
-      value: "£350",
+      value: "£10,000,000 - £20,000,000",
     },
     {
-      value: "£400+",
+      value: "£20,000,000+",
     },
   ];
 
@@ -215,18 +215,6 @@ export default function RegistrationThreeView(props) {
               )}
             </div>
 
-            <>
-              {context.registerAccount.user_type === "Commercial" ? (
-                <GenericInput
-                  inputCategory="Optional : Are you a UK charity registered organisation? "
-                  inputType="text"
-                  labelName="arc_charity_no_label"
-                  placeholderText="e.g 1234567"
-                  onGenericInputChange={onGenericInputChange}
-                ></GenericInput>
-              ) : null}
-            </>
-
             <ButtonToggleElement
               buttonQuestion={
                 context.registerAccount.user_type === "Personal"
@@ -251,7 +239,7 @@ export default function RegistrationThreeView(props) {
             {context.registerAccount.user_type === "Commercial" ? (
               <>
                 <GenericInput
-                  inputCategory="Do you charge a rehoming fee?"
+                  inputCategory="What is the rough estimate of valuables inside your property?"
                   labelName="arc_fee_label"
                   optionValue={rehomingFee}
                   onGenericInputChange={onGenericInputChange}
@@ -273,17 +261,17 @@ export default function RegistrationThreeView(props) {
             <ButtonToggleElement
               buttonQuestion={
                 context.registerAccount.user_type === "Personal"
-                  ? "Animals I'm interested in"
-                  : "Animals in your care"
+                  ? "What is more important for your house protection? Select all that apply."
+                  : "What is more important for your commercial property? Select all that apply."
               }
               handleClickToggle={handleClickToggleDog}
               active={activeDog}
-              idAndName="dogs"
+              idAndName="Camouflage"
             />
             <ButtonToggleElement
               handleClickToggle={handleClickToggleCat}
               active={activeCat}
-              idAndName="cats"
+              idAndName="Agility"
             />
             {!validateCatDog ? (
               <div className="arc_form_validation">Select atleast one</div>

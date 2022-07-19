@@ -156,11 +156,14 @@ export default function useOnGenericInputChange(props) {
   // for radio buttons only as need to set by boolean as opposed to value in the key/value loop above. Can see if you can sync them together but may be cleaner/clearer this way.
   function preselectedUser(param) {
     if (context.registerAccount.user_type) {
-      if (context.registerAccount.user_type === "org" && param === "org") {
+      if (
+        context.registerAccount.user_type === "Commercial" &&
+        param === "Commercial"
+      ) {
         return true;
       } else if (
-        context.registerAccount.user_type === "user" &&
-        param === "user"
+        context.registerAccount.user_type === "Personal" &&
+        param === "Personal"
       ) {
         return true;
       }
