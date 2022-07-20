@@ -115,46 +115,16 @@ export default function RegistrationThreeView(props) {
   const rehomingFee = [
     { value: "Please Select" },
     {
-      value: "£500 - £1000",
+      value: "Bronze",
     },
     {
-      value: "£1000 - £3000",
+      value: "Silver",
     },
     {
-      value: "£3000 - £5000",
+      value: "Gold",
     },
     {
-      value: "£5000 - £10,000",
-    },
-    {
-      value: "£10,000 - £20,000",
-    },
-    {
-      value: "£20,000 - £50,000",
-    },
-    {
-      value: "£50,000 - £100,000",
-    },
-    {
-      value: "£100,000 - £250,000",
-    },
-    {
-      value: "£250,000 - £500,000",
-    },
-    {
-      value: "£1,000,000 - £3,000,000",
-    },
-    {
-      value: "£3,000,000 - £5,000,000",
-    },
-    {
-      value: "£5,000,000 - £10,000,000",
-    },
-    {
-      value: "£10,000,000 - £20,000,000",
-    },
-    {
-      value: "£20,000,000+",
+      value: "Platinum",
     },
   ];
 
@@ -236,27 +206,29 @@ export default function RegistrationThreeView(props) {
               <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
             )}
 
-            {context.registerAccount.user_type === "Commercial" ? (
-              <>
-                <GenericInput
-                  inputCategory="What is the rough estimate of valuables inside your property?"
-                  labelName="arc_fee_label"
-                  optionValue={rehomingFee}
-                  onGenericInputChange={onGenericInputChange}
-                  input={input}
-                  inputTypeScrape={inputTypeScrape}
-                />
+            <>
+              <GenericInput
+                inputCategory={
+                  context.registerAccount.user_type === "Personal"
+                    ? "What tier are you interested in for your home?"
+                    : "What tier are you interested in for your commercial property?"
+                }
+                labelName="arc_fee_label"
+                optionValue={rehomingFee}
+                onGenericInputChange={onGenericInputChange}
+                input={input}
+                inputTypeScrape={inputTypeScrape}
+              />
 
-                {!validateRehomingFee ? (
-                  <div className="arc_form_validation">Select atleast one</div>
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faCheckCircle}
-                    className="arc_fa_color"
-                  />
-                )}
-              </>
-            ) : null}
+              {!validateRehomingFee ? (
+                <div className="arc_form_validation">Select atleast one</div>
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="arc_fa_color"
+                />
+              )}
+            </>
 
             <ButtonToggleElement
               buttonQuestion={
@@ -266,12 +238,12 @@ export default function RegistrationThreeView(props) {
               }
               handleClickToggle={handleClickToggleDog}
               active={activeDog}
-              idAndName="Camouflage"
+              idAndName="Attacc"
             />
             <ButtonToggleElement
               handleClickToggle={handleClickToggleCat}
               active={activeCat}
-              idAndName="Agility"
+              idAndName="Protecc"
             />
             {!validateCatDog ? (
               <div className="arc_form_validation">Select atleast one</div>

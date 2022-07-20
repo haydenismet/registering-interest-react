@@ -149,8 +149,8 @@ export default function useFormValidations() {
   function validateAdoptFosterFunction() {
     if (context.registerAccount) {
       if (
-        context.registerAccount.adoption === false &&
-        context.registerAccount.foster === false
+        context.registerAccount.knight_watch === false &&
+        context.registerAccount.protection_barrier === false
       ) {
         setValidateAdoptionFoster(false);
       } else {
