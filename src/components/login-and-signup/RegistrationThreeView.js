@@ -8,7 +8,6 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import BackElement from "../elements/BackElement.js";
 import ButtonToggleElement from "../elements/ButtonToggleElement.js";
 import { RegistrationContext } from "../context/RegistrationContext.context";
-import HomeView from "../HomeView.js";
 export default function RegistrationThreeView(props) {
   const {
     view,
@@ -153,14 +152,16 @@ export default function RegistrationThreeView(props) {
               inputTypeScrape={inputTypeScrape}
             />
             <div className="arc_form_validation">
-              {!validateUserLocation ? (
-                "Location required"
-              ) : (
-                <FontAwesomeIcon
-                  icon={faCheckCircle}
-                  className="arc_fa_color"
-                />
-              )}
+              {context.registerAccount.user_location !== null ? (
+                !validateUserLocation ? (
+                  "Location required"
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faCheckCircle}
+                    className="arc_fa_color"
+                  />
+                )
+              ) : null}
             </div>
             <GenericInput
               inputCategory={
@@ -175,14 +176,16 @@ export default function RegistrationThreeView(props) {
               inputTypeScrape={inputTypeScrape}
             />
             <div className="arc_form_validation">
-              {!validateUserDistance ? (
-                "Distance required"
-              ) : (
-                <FontAwesomeIcon
-                  icon={faCheckCircle}
-                  className="arc_fa_color"
-                />
-              )}
+              {context.registerAccount.user_distance !== null ? (
+                !validateUserDistance ? (
+                  "Distance required"
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faCheckCircle}
+                    className="arc_fa_color"
+                  />
+                )
+              ) : null}
             </div>
 
             <ButtonToggleElement
@@ -219,15 +222,16 @@ export default function RegistrationThreeView(props) {
                 input={input}
                 inputTypeScrape={inputTypeScrape}
               />
-
-              {!validateRehomingFee ? (
-                <div className="arc_form_validation">Select atleast one</div>
-              ) : (
-                <FontAwesomeIcon
-                  icon={faCheckCircle}
-                  className="arc_fa_color"
-                />
-              )}
+              {context.registerAccount.rehoming_fee !== null ? (
+                !validateRehomingFee ? (
+                  <div className="arc_form_validation">Select atleast one</div>
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faCheckCircle}
+                    className="arc_fa_color"
+                  />
+                )
+              ) : null}
             </>
 
             <ButtonToggleElement
@@ -263,20 +267,12 @@ export default function RegistrationThreeView(props) {
             handleViewClickNext={handleViewClickNext}
             view={view}
             isDisabled={
-              context.registerAccount.user_type === "Personal"
-                ? validateUserLocation &&
-                  validateUserDistance &&
-                  validateAdoptionFoster &&
-                  validateCatDog
-                  ? false
-                  : true
-                : context.registerAccount.user_type === "Commercial"
-                ? validateCatDog &&
-                  validateAdoptionFoster &&
-                  validateRehomingFee
-                  ? false
-                  : true
-                : null
+              validateUserLocation &&
+              validateUserDistance &&
+              validateAdoptionFoster &&
+              validateCatDog
+                ? false
+                : true
             }
           />
         </div>

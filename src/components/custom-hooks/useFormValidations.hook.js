@@ -22,7 +22,7 @@ export default function useFormValidations() {
   /************** FORM VALIDATION ****************/
   /* Validating user input fields on click. These functions are passed to the handleViewTwo function to be ran onClick*/
   function validateUserNameFunction() {
-    if (context.registerAccount) {
+    if (context.registerAccount.name !== null) {
       if (
         context.registerAccount.name !== "" &&
         context.registerAccount.name.length >= 2
@@ -38,7 +38,7 @@ export default function useFormValidations() {
     const emailRegex = new RegExp(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
-    if (context.registerAccount) {
+    if (context.registerAccount.email !== null) {
       if (
         context.registerAccount.email !== "" &&
         emailRegex.test(context.registerAccount.email)
@@ -51,7 +51,7 @@ export default function useFormValidations() {
   }
 
   function validateEmailConfirmFunction() {
-    if (context.registerAccount) {
+    if (context.registerAccount.confirm_email !== null) {
       if (
         context.registerAccount.email ===
           context.registerAccount.confirm_email &&
@@ -68,7 +68,7 @@ export default function useFormValidations() {
     const passwordRegex = new RegExp(
       /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/
     );
-    if (context.registerAccount) {
+    if (context.registerAccount.password !== null) {
       if (
         context.registerAccount.password !== "" &&
         passwordRegex.test(context.registerAccount.password)
@@ -81,7 +81,7 @@ export default function useFormValidations() {
   }
 
   function validateUserPasswordConfirmFunction() {
-    if (context.registerAccount) {
+    if (context.registerAccount.confirm_password !== null) {
       if (
         context.registerAccount.password ===
           context.registerAccount.confirm_password &&
@@ -95,7 +95,7 @@ export default function useFormValidations() {
   }
 
   function validateUserLocationFunction() {
-    if (context.registerAccount) {
+    if (context.registerAccount.user_location !== null) {
       if (
         context.registerAccount.user_location !== "" &&
         context.registerAccount.user_location !== "Please Select"
@@ -108,7 +108,7 @@ export default function useFormValidations() {
   }
 
   function validateUserDistanceFunction() {
-    if (context.registerAccount) {
+    if (context.registerAccount.user_distance !== null) {
       if (
         context.registerAccount.user_distance !== "" &&
         context.registerAccount.user_distance !== "Please Select"
@@ -121,7 +121,7 @@ export default function useFormValidations() {
   }
 
   function validateRehomingFeeFunction() {
-    if (context.registerAccount) {
+    if (context.registerAccount.rehoming_fee !== null) {
       if (
         context.registerAccount.rehoming_fee !== "" &&
         context.registerAccount.rehoming_fee !== "Please Select"
@@ -134,7 +134,10 @@ export default function useFormValidations() {
   }
 
   function validateCatDogFunction() {
-    if (context.registerAccount) {
+    if (
+      context.registerAccount.cat !== null &&
+      context.registerAccount.dog !== null
+    ) {
       if (
         context.registerAccount.cat === false &&
         context.registerAccount.dog === false
@@ -147,7 +150,10 @@ export default function useFormValidations() {
   }
 
   function validateAdoptFosterFunction() {
-    if (context.registerAccount) {
+    if (
+      context.registerAccount.knight_watch !== null &&
+      context.registerAccount.protection_barrier !== null
+    ) {
       if (
         context.registerAccount.knight_watch === false &&
         context.registerAccount.protection_barrier === false

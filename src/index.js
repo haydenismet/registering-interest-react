@@ -7,11 +7,10 @@ import { RegistrationProvider } from "./components/context/RegistrationContext.c
 
 /* RegistrationProvider is context to provide regTwoInput globally between components */
 ReactDOM.render(
-  <React.StrictMode>
-    <RegistrationProvider>
-      <App />
-    </RegistrationProvider>
-  </React.StrictMode>,
+  <RegistrationProvider>
+    <App />
+  </RegistrationProvider>,
+
   document.getElementById("root")
 );
 

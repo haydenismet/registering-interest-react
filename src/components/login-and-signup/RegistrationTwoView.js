@@ -50,11 +50,16 @@ export default function RegistrationTwoView(props) {
             view={view}
           />
           <div className="arc_form_validation">
-            {!validateUserName ? (
-              "Name"
-            ) : (
-              <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
-            )}
+            {context.registerAccount.name !== null ? (
+              !validateUserName ? (
+                "2 character minimum required."
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="arc_fa_color"
+                />
+              )
+            ) : null}
           </div>
           <GenericInput
             inputCategory="Email"
@@ -66,11 +71,16 @@ export default function RegistrationTwoView(props) {
             view={view}
           />
           <div className="arc_form_validation">
-            {!validateUserEmail ? (
-              "Not a valid email "
-            ) : (
-              <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
-            )}
+            {context.registerAccount.email !== null ? (
+              !validateUserEmail ? (
+                "Not a valid email "
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="arc_fa_color"
+                />
+              )
+            ) : null}
           </div>
           <GenericInput
             inputCategory="Confirm Email"
@@ -82,11 +92,16 @@ export default function RegistrationTwoView(props) {
             view={view}
           />
           <div className="arc_form_validation">
-            {!validateUserEmailConfirm ? (
-              "Matching Email"
-            ) : (
-              <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
-            )}
+            {context.registerAccount.confirm_email !== null ? (
+              !validateUserEmailConfirm ? (
+                "Matching Email"
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="arc_fa_color"
+                />
+              )
+            ) : null}
           </div>
           <GenericInput
             inputCategory="Password"
@@ -98,11 +113,16 @@ export default function RegistrationTwoView(props) {
             view={view}
           />
           <div className="arc_form_validation">
-            {!validateUserPassword ? (
-              "Minimum of 8 characters of uppercase, lowercase, digits and special characters"
-            ) : (
-              <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
-            )}
+            {context.registerAccount.password !== null ? (
+              !validateUserPassword ? (
+                "Minimum of 8 characters of uppercase, lowercase, digits and special characters"
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="arc_fa_color"
+                />
+              )
+            ) : null}
           </div>
           <GenericInput
             inputCategory="Confirm Password"
@@ -114,11 +134,16 @@ export default function RegistrationTwoView(props) {
             view={view}
           />
           <div className="arc_form_validation">
-            {!validateUserPasswordConfirm ? (
-              "Matching password"
-            ) : (
-              <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
-            )}
+            {context.registerAccount.confirm_password !== null ? (
+              !validateUserPasswordConfirm ? (
+                "Matching password"
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="arc_fa_color"
+                />
+              )
+            ) : null}
           </div>
         </div>
 
