@@ -3,6 +3,7 @@ import { RegistrationContext } from "./context/RegistrationContext.context";
 import md5 from "md5";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
+import { firebaseConfig } from "./firebase-credentials";
 
 export default function HomeView() {
   const context = useContext(RegistrationContext);
