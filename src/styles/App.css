@@ -209,6 +209,9 @@ input:focus {
 
 .arc_button_container_on {
   display:flex;
+    position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .arc_button_container {
