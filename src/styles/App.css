@@ -36,6 +36,11 @@ body {
 
 /**************************************/
 
+.arc_container {
+  height:100vh;
+  background-color:green;
+}
+
 /* REGISTRATION LOGIN HEADER & LOGIN OR REGISTER COMPONENTS */
 .registration_login_header_container {
   background-color: #3d405b;
@@ -209,8 +214,6 @@ input:focus {
 
 .arc_button_container_on {
   display:flex;
-    position: fixed;
-  bottom: 0;
   width: 100%;
 }
 
@@ -348,6 +351,8 @@ input:focus {
 .arc_container_reg {
   display: flex;
   flex-direction: column;
+  height:100vh;
+  background-color:yellow;
   
 }
 
