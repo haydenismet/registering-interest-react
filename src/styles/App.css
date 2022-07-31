@@ -28,7 +28,7 @@ body {
 
 
 #root {
-  min-height: 100vh;
+  height: 100vh;
   background-color: #f0f0f0;
 }
 
@@ -37,8 +37,12 @@ body {
 /**************************************/
 
 .arc_container {
-  height:100vh;
-  background-color:green;
+  width: 375px;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  border: 2px solid #cbcbcb;
+  height:100%;
+  overflow-y:scroll;
 }
 
 /* REGISTRATION LOGIN HEADER & LOGIN OR REGISTER COMPONENTS */
@@ -75,11 +79,7 @@ body {
 }
 
 .arc_login {
-  display: flex;
-  flex-direction: column;
   padding: 0 2rem;
-  position: relative;
-  flex: 1;
 }
 
 .arc_logo svg {
@@ -341,18 +341,11 @@ input:focus {
   flex: 1 1;
 }
 
-.arc_container_reg_flex {
-
-  display: flex;
-  flex-direction: column;
- 
-}
 
 .arc_container_reg {
-  display: flex;
+/*  display: flex;
   flex-direction: column;
-  height:100vh;
-  background-color:yellow;
+  background-color:yellow;*/
   
 }
 
