@@ -28,21 +28,27 @@ body {
 
 
 #root {
-  height: 100vh;
-  background-color: #f0f0f0;
+  /*height: 100vh;
+  background-color: #f0f0f0;*/
 }
 
+#arc_outer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 
 /**************************************/
 
 .arc_container {
   width: 375px;
+  height:675px;
   margin: 0 auto;
   background-color: #f0f0f0;
   border: 2px solid #cbcbcb;
-  height:100%;
-  overflow-y:scroll;
+  /*overflow-y:scroll;*/
 }
 
 /* REGISTRATION LOGIN HEADER & LOGIN OR REGISTER COMPONENTS */
@@ -219,9 +225,9 @@ input:focus {
 
 .arc_button_container {
   display: flex;
-  position: fixed;
+  /*position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100%;*/
 }
 
 .arc_next_element {

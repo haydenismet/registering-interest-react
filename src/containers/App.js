@@ -153,7 +153,9 @@ function App() {
 
   return (
     <>
-      <div className="arc_container">{returnRegistrationStage(view)}</div>
+      <div id="arc_outer">
+        <div className="arc_container">{returnRegistrationStage(view)}</div>
+      </div>
     </>
   );
 }
