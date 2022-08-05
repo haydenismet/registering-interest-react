@@ -299,6 +299,7 @@ input:focus {
   right: 2%;
   color: white;
   top: 27%;
+  cursor:pointer;
 }
 
 .arc_info_popup {
@@ -311,6 +312,11 @@ input:focus {
   font-family: 'DM Sans';
   width: 100%;
   justify-content: center;
+  
+}
+
+.arc_info_popup p, .arc_info_popup button {
+  cursor:pointer;
 }
 
 .arc_info_popup button {
@@ -485,8 +491,8 @@ input:focus {
 
 #cats,
 #dogs,
-#adoption,
-#fostering {
+#KnightWatch,
+#SentryBarrier {
   padding: 1rem 5rem;
   margin: 1rem;
   cursor: pointer;
@@ -536,9 +542,9 @@ label.arc_generic_label {
   margin-top: 1rem;
 }
 
-.arc_registration_three_container .arc_form_validation {
+/*.arc_registration_three_container .arc_form_validation {
   margin-top: -2rem;
-}
+}*/
 
 .arc_fa_color {
   color: #70d07a;
@@ -635,6 +641,11 @@ label.arc_generic_label {
   font-style: italic;
   font-weight: 500;
   font-size: 1rem;
+}
+
+.arc_choice_container  {
+  display:flex;
+  flex-direction: column;
 }
 
 /*****************************************/

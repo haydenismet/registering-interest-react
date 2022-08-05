@@ -23,8 +23,8 @@ export default function RegistrationThreeView(props) {
     validateCatDog,
     handleClickToggleAdoption,
     handleClickToggleFoster,
-    activeAdoption,
-    activeFoster,
+    activeKnightWatch,
+    activeProtectionBarrier,
     validateAdoptionFoster,
     validateRehomingFee,
     handleViewClickBack,
@@ -187,27 +187,31 @@ export default function RegistrationThreeView(props) {
                 )
               ) : null}
             </div>
-
-            <ButtonToggleElement
-              buttonQuestion={
-                context.registerAccount.user_type === "Personal"
-                  ? "What cover options would you like for your home?"
-                  : "What cover options would you like for your commercial property?"
-              }
-              handleClickToggle={handleClickToggleAdoption}
-              active={activeAdoption}
-              idAndName="Knight Watch"
-            />
-            <ButtonToggleElement
-              handleClickToggle={handleClickToggleFoster}
-              active={activeFoster}
-              idAndName="fostering"
-            />
-            {!validateAdoptionFoster ? (
-              <div className="arc_form_validation">Select atleast one</div>
-            ) : (
-              <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
-            )}
+            <div class="arc_choice_container">
+              <ButtonToggleElement
+                buttonQuestion={
+                  context.registerAccount.user_type === "Personal"
+                    ? "What cover options would you like for your home?"
+                    : "What cover options would you like for your commercial property?"
+                }
+                handleClickToggle={handleClickToggleAdoption}
+                active={activeKnightWatch}
+                idAndName="KnightWatch"
+              />
+              <ButtonToggleElement
+                handleClickToggle={handleClickToggleFoster}
+                active={activeProtectionBarrier}
+                idAndName="SentryBarrier"
+              />
+              {!validateAdoptionFoster ? (
+                <div className="arc_form_validation">Select atleast one</div>
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="arc_fa_color"
+                />
+              )}
+            </div>
 
             <>
               <GenericInput
