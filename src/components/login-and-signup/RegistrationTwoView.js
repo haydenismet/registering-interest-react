@@ -29,7 +29,6 @@ export default function RegistrationTwoView(props) {
 
       <ProgressBarElement stage="2" />
       <div className="arc_content_container">
-        <div className="arc_registration_two_heading">Nearly there...</div>
         <div className="arc_registration_two_subheading">
           A few more steps to secure priority access to <b>Knight Cat</b> for
           {context.registerAccount.user_type === "Personal"

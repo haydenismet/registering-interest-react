@@ -35,8 +35,8 @@ function App() {
     handleClickToggleFoster,
     activeDog,
     activeCat,
-    activeAdoption,
-    activeFoster,
+    activeKnightWatch,
+    activeProtectionBarrier,
   } = useHandleClicks();
 
   // handleValidations custom hook imports
@@ -136,8 +136,8 @@ function App() {
             validateUserDistance={validateUserDistance}
             activeCat={activeCat}
             validateCatDog={validateCatDog}
-            activeAdoption={activeAdoption}
-            activeFoster={activeFoster}
+            activeKnightWatch={activeKnightWatch}
+            activeProtectionBarrier={activeProtectionBarrier}
             validateAdoptionFoster={validateAdoptionFoster}
             validateRehomingFee={validateRehomingFee}
           />

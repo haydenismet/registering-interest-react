@@ -133,11 +133,7 @@ export default function RegistrationThreeView(props) {
       <RegistrationLoginHeaderElement />
       <div className="arc_container_reg">
         <ProgressBarElement stage="3" />
-        <div className="arc_registration_three_container">
-          <div className="arc_registration_three_heading">Thanks! </div>
-          <div className="arc_registration_three_subheading">
-            Last few questions before paws galore!
-          </div>
+        <div className="arc_content_container">
           <div className="arc_registration_three_input_container">
             <GenericInput
               inputCategory={
@@ -237,27 +233,31 @@ export default function RegistrationThreeView(props) {
                 )
               ) : null}
             </>
-
-            <ButtonToggleElement
-              buttonQuestion={
-                context.registerAccount.user_type === "Personal"
-                  ? "What is more important for your house protection? Select all that apply."
-                  : "What is more important for your commercial property? Select all that apply."
-              }
-              handleClickToggle={handleClickToggleDog}
-              active={activeDog}
-              idAndName="Attacc"
-            />
-            <ButtonToggleElement
-              handleClickToggle={handleClickToggleCat}
-              active={activeCat}
-              idAndName="Protecc"
-            />
-            {!validateCatDog ? (
-              <div className="arc_form_validation">Select atleast one</div>
-            ) : (
-              <FontAwesomeIcon icon={faCheckCircle} className="arc_fa_color" />
-            )}
+            <div class="arc_choice_container">
+              <ButtonToggleElement
+                buttonQuestion={
+                  context.registerAccount.user_type === "Personal"
+                    ? "What is more important for your house protection? Select all that apply."
+                    : "What is more important for your commercial property? Select all that apply."
+                }
+                handleClickToggle={handleClickToggleDog}
+                active={activeDog}
+                idAndName="Attacc"
+              />
+              <ButtonToggleElement
+                handleClickToggle={handleClickToggleCat}
+                active={activeCat}
+                idAndName="Protecc"
+              />
+              {!validateCatDog ? (
+                <div className="arc_form_validation">Select atleast one</div>
+              ) : (
+                <FontAwesomeIcon
+                  icon={faCheckCircle}
+                  className="arc_fa_color"
+                />
+              )}
+            </div>
           </div>
         </div>
         <div className="arc_button_container_on">
