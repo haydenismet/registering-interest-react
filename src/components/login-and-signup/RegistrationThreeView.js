@@ -233,7 +233,7 @@ export default function RegistrationThreeView(props) {
                 )
               ) : null}
             </>
-            <div class="arc_choice_container">
+            <div className="arc_choice_container">
               <ButtonToggleElement
                 buttonQuestion={
                   context.registerAccount.user_type === "Personal"
