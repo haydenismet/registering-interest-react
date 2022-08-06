@@ -1,6 +1,4 @@
-import arc_logo from "../../assets/arc_logo.png";
 export default function RegistrationLoginHeaderElement() {
-  /* Import logo from folder, place into reg/login element as {arc_logo} */
   return (
     <div className="registration_login_header_container">
       <div className="arc_logo">

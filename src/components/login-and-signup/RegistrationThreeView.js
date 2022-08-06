@@ -192,12 +192,12 @@ export default function RegistrationThreeView(props) {
                 }
                 handleClickToggle={handleClickToggleAdoption}
                 active={activeKnightWatch}
-                idAndName="KnightWatch"
+                idAndName="Patrol"
               />
               <ButtonToggleElement
                 handleClickToggle={handleClickToggleFoster}
                 active={activeProtectionBarrier}
-                idAndName="SentryBarrier"
+                idAndName="Sentry"
               />
               {!validateAdoptionFoster ? (
                 <div className="arc_form_validation">Select atleast one</div>
@@ -237,8 +237,8 @@ export default function RegistrationThreeView(props) {
               <ButtonToggleElement
                 buttonQuestion={
                   context.registerAccount.user_type === "Personal"
-                    ? "What is more important for your house protection? Select all that apply."
-                    : "What is more important for your commercial property? Select all that apply."
+                    ? "What is more important for your house protection?"
+                    : "What is more important for your commercial property?"
                 }
                 handleClickToggle={handleClickToggleDog}
                 active={activeDog}

@@ -5,6 +5,8 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
 import { firebaseConfig } from "./firebase-credentials";
 
+import PetCardFullDetail from "./elements/PetCardFullDetail";
+
 export default function HomeView() {
   const context = useContext(RegistrationContext);
   const { v4: uuidv4 } = require("uuid");
@@ -31,7 +33,9 @@ export default function HomeView() {
 
   return (
     <>
-      <div className="arc_container_homeview">THANKS!</div>
+      <div className="arc_container_homeview">
+        <PetCardFullDetail></PetCardFullDetail>
+      </div>
     </>
   );
 }
