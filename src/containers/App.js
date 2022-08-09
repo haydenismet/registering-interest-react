@@ -38,7 +38,7 @@ function App() {
     activeKnightWatch,
     activeProtectionBarrier,
   } = useHandleClicks();
-  console.log(view);
+
   // handleValidations custom hook imports
   const {
     handleValidations,

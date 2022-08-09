@@ -2,7 +2,7 @@ import React from "react";
 import RegistrationLoginHeaderElement from "./RegistrationLoginHeaderElement";
 export default function PetCardFullDetail(props) {
   const { userDetails } = props;
-  console.log(userDetails);
+
   return (
     <>
       <RegistrationLoginHeaderElement />
