@@ -15,7 +15,7 @@ export default function HomeView() {
   const app = initializeApp(firebaseConfig);
 
   const { registerAccount } = context;
-
+  const { name, email, user_location } = registerAccount;
   const db = getDatabase(app);
   set(ref(db, "presale-account " + uuidv4()), {
     user_type: registerAccount.user_type,
@@ -34,7 +34,9 @@ export default function HomeView() {
   return (
     <>
       <div className="arc_container_homeview">
-        <PetCardFullDetail></PetCardFullDetail>
+        <PetCardFullDetail
+          userDetails={{ name, email, user_location }}
+        ></PetCardFullDetail>
       </div>
     </>
   );

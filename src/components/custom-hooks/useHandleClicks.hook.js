@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { RegistrationContext } from "../context/RegistrationContext.context";
 export default function useHandleClicks() {
   const context = useContext(RegistrationContext);
-  let [view, setView] = useState(1);
+  let [view, setView] = useState(6);
   let [activeDog, setActiveDog] = useState(true);
   let [activeCat, setActiveCat] = useState(true);
   let [activeKnightWatch, setActiveKnightWatch] = useState(true);

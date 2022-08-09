@@ -659,14 +659,20 @@ label.arc_generic_label {
 }
 
 .arc_pet_name {
-  font-family: 'Lexend Deca';
   font-size: 2rem;
   margin-top: 1rem;
 }
 
+.arc_pet_goodbye {
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  
+}
+
 .arc_pet_org {
   font-size: 1.6rem;
-  margin-bottom: 1rem;
+  margin:1rem 0;
+  color: #6b6b6b;
 }
 
 .arc_pet_card_img {
@@ -683,9 +689,7 @@ label.arc_generic_label {
 
 
 .arc_pet_card_likes_details {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
   font-size: 1.4rem;
   margin-top: 0.6rem;
 }
@@ -693,6 +697,8 @@ label.arc_generic_label {
 .arc_pet_card_detail_container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin:2rem 0;
 }
 
 .arc_pet_card_img_container {
@@ -723,6 +729,7 @@ label.arc_generic_label {
   color: white;
   font-weight: 600;
   margin-right: 1rem;
+  position:relative;
 }
 
 .arc_detail_styles:last-child {
@@ -769,12 +776,17 @@ label.arc_generic_label {
 
 .arc_pet_card_full_points,
 .arc_pet_card_full_description {
-  font-size: 1.5rem;
+  
   color: #6b6b6b;
+}
+
+.arc_pet_card_full_points p {
+  font-size: 1.2rem;
 }
 
 .arc_pet_card_full_description p {
   margin: 1.5rem 0;
+  font-size:1.3rem;
 
 }
 
