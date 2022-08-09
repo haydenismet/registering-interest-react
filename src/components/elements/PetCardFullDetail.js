@@ -6,7 +6,7 @@ export default function PetCardFullDetail(props) {
   return (
     <>
       <RegistrationLoginHeaderElement />
-      <div className="arc_pet_card_container">
+      <div className="arc_content_container_end">
         <div className="arc_pet_card_details">
           <div className="arc_pet_name">
             <b>Thanks, {userDetails.name}</b>

@@ -33,11 +33,9 @@ export default function HomeView() {
 
   return (
     <>
-      <div className="arc_container_homeview">
-        <PetCardFullDetail
-          userDetails={{ name, email, user_location }}
-        ></PetCardFullDetail>
-      </div>
+      <PetCardFullDetail
+        userDetails={{ name, email, user_location }}
+      ></PetCardFullDetail>
     </>
   );
 }

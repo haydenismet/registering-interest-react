@@ -75,6 +75,11 @@ body {
 
 }
 
+.arc_content_container_end {
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+
 /* REGISTRATION LOGIN HEADER & LOGIN OR REGISTER COMPONENTS */
 .registration_login_header_container {
   background-color: #3d405b;
