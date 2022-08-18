@@ -1,6 +1,6 @@
 import React from "react";
 import RegistrationLoginHeaderElement from "./RegistrationLoginHeaderElement";
-export default function PetCardFullDetail(props) {
+export default function RegistrationDetailsComplete(props) {
   const { userDetails } = props;
 
   return (

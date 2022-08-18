@@ -1,17 +1,18 @@
 import React, { useEffect, useContext } from "react";
 import "../styles/App.css";
 /* Component Views */
-import TermsAndConditionsView from "../components/login-and-signup/TermsAndConditionsView";
-import LoginOrRegisterView from "../components/login-and-signup/LoginOrRegisterView";
-import RegistrationOneView from "../components/login-and-signup/RegistrationOneView";
-import RegistrationTwoView from "../components/login-and-signup/RegistrationTwoView";
-import RegistrationThreeView from "../components/login-and-signup/RegistrationThreeView";
-import HomeView from "../components/HomeView";
+import TermsAndConditionsView from "../components/pages/TermsAndConditionsView";
+import StartRegistration from "../components/pages/StartRegistration";
+import RegistrationOneView from "../components/pages/RegistrationOneView";
+import RegistrationTwoView from "../components/pages/RegistrationTwoView";
+import RegistrationThreeView from "../components/pages/RegistrationThreeView";
+import CompleteRegistration from "../components/pages/CompleteRegistration";
 /* Custom hooks -  Its then destructed so I can acquire the props from the hook function to then use as normal like props */
 import useInputChanges from "../components/custom-hooks/useInputChanges.hook";
 import useHandleClicks from "../components/custom-hooks/useHandleClicks.hook";
 import useFormValidations from "../components/custom-hooks/useFormValidations.hook";
 import useRememberValues from "../components/custom-hooks/useRememberValues.hook";
+import RegistrationThreeValues from "../components/elements/RegistrationThreeValues";
 /* Registration Context */
 import { RegistrationContext } from "../components/context/RegistrationContext.context";
 
@@ -54,6 +55,9 @@ function App() {
   } = useFormValidations();
 
   const { restorePropsValues, preselectedUser } = useRememberValues();
+
+  const { locationOptions, distanceOptions, tierValue } =
+    RegistrationThreeValues();
   /************************************************/
 
   /****************** USE EFFECTS ******************/
@@ -76,7 +80,7 @@ function App() {
     switch (view) {
       case 1:
         return (
-          <LoginOrRegisterView
+          <StartRegistration
             handleViewClickNext={handleViewClickNext}
             view={view}
           />
@@ -141,12 +145,15 @@ function App() {
             activeProtectionBarrier={activeProtectionBarrier}
             validateAdoptionFoster={validateAdoptionFoster}
             validateRehomingFee={validateRehomingFee}
+            locationOptions={locationOptions}
+            distanceOptions={distanceOptions}
+            tierValue={tierValue}
             restorePropsValues={restorePropsValues}
           />
         );
 
       case 6:
-        return <HomeView />;
+        return <CompleteRegistration />;
 
       default:
         return <div className="whoops"> Darn it, something went wrong. </div>;

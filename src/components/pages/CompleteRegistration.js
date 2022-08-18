@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import { RegistrationContext } from "./context/RegistrationContext.context";
+import { RegistrationContext } from "../context/RegistrationContext.context";
 import md5 from "md5";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set } from "firebase/database";
-import { firebaseConfig } from "./firebase-credentials";
-
-import PetCardFullDetail from "./elements/PetCardFullDetail";
+import { firebaseConfig } from "../firebase-credentials";
+import RegistrationDetailsComplete from "../elements/RegistrationDetailsComplete";
 
 export default function HomeView() {
   const context = useContext(RegistrationContext);
@@ -33,9 +32,9 @@ export default function HomeView() {
 
   return (
     <>
-      <PetCardFullDetail
+      <RegistrationDetailsComplete
         userDetails={{ name, email, user_location }}
-      ></PetCardFullDetail>
+      ></RegistrationDetailsComplete>
     </>
   );
 }

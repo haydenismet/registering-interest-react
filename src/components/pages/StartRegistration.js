@@ -3,7 +3,7 @@ import RegistrationLoginHeaderElement from "../elements/RegistrationLoginHeaderE
 import TermsAndConditionsElement from "../elements/TermsAndConditionsElement.js";
 import NextElement from "../elements/NextElement.js";
 
-export default function LoginOrRegisterView(props) {
+export default function StartRegistration(props) {
   const { handleViewClickNext, view } = props;
 
   return (

@@ -243,6 +243,18 @@ input:focus {
   margin-right: 10px;
 }
 
+.arc_t_c_p {
+  margin-top:2rem;
+  font-size:1.5rem;
+  text-align:justify;
+}
+
+.arc_t_c_h5 {
+  margin:1.5rem 0;
+}
+.arc_t_c_element_end {
+  margin-top:5rem;
+}
 
 /************************************************/
 
