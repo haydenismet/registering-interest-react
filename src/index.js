@@ -5,7 +5,7 @@ import App from "./containers/App.js";
 import reportWebVitals from "./reportWebVitals";
 import { RegistrationProvider } from "./components/context/RegistrationContext.context";
 
-/* RegistrationProvider is context to provide regTwoInput globally between components */
+/* RegistrationProvider is context globally between components for the registration process */
 ReactDOM.render(
   <RegistrationProvider>
     <App />

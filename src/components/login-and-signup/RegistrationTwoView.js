@@ -20,13 +20,13 @@ export default function RegistrationTwoView(props) {
     validateUserPasswordConfirm,
     input,
     view,
+    restorePropsValues,
   } = props;
 
   const context = useContext(RegistrationContext);
   return (
     <>
       <RegistrationLoginHeaderElement />
-
       <ProgressBarElement stage="2" />
       <div className="arc_content_container">
         <div className="arc_registration_two_subheading">
@@ -47,6 +47,7 @@ export default function RegistrationTwoView(props) {
           input={input}
           inputTypeScrape={inputTypeScrape}
           view={view}
+          restorePropsValues={restorePropsValues}
         />
         <div className="arc_form_validation">
           {context.registerAccount.name !== null ? (
@@ -65,6 +66,7 @@ export default function RegistrationTwoView(props) {
           input={input}
           inputTypeScrape={inputTypeScrape}
           view={view}
+          restorePropsValues={restorePropsValues}
         />
         <div className="arc_form_validation">
           {context.registerAccount.email !== null ? (
@@ -83,6 +85,7 @@ export default function RegistrationTwoView(props) {
           onGenericInputChange={onGenericInputChange}
           input={input}
           view={view}
+          restorePropsValues={restorePropsValues}
         />
         <div className="arc_form_validation">
           {context.registerAccount.confirm_email !== null ? (
@@ -101,6 +104,7 @@ export default function RegistrationTwoView(props) {
           onGenericInputChange={onGenericInputChange}
           input={input}
           view={view}
+          restorePropsValues={restorePropsValues}
         />
         <div className="arc_form_validation">
           {context.registerAccount.password !== null ? (
@@ -119,6 +123,7 @@ export default function RegistrationTwoView(props) {
           input={input}
           inputTypeScrape={inputTypeScrape}
           view={view}
+          restorePropsValues={restorePropsValues}
         />
         <div className="arc_form_validation">
           {context.registerAccount.confirm_password !== null ? (

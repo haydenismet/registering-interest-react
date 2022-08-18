@@ -8,21 +8,20 @@ import RegistrationTwoView from "../components/login-and-signup/RegistrationTwoV
 import RegistrationThreeView from "../components/login-and-signup/RegistrationThreeView";
 import HomeView from "../components/HomeView";
 /* Custom hooks -  Its then destructed so I can acquire the props from the hook function to then use as normal like props */
-import useOnGenericInputChange from "../components/custom-hooks/useOnGenericInputChange.hook";
+import useInputChanges from "../components/custom-hooks/useInputChanges.hook";
 import useHandleClicks from "../components/custom-hooks/useHandleClicks.hook";
 import useFormValidations from "../components/custom-hooks/useFormValidations.hook";
-
-// You don't import the parseSessionStorage function as  this is directly called on input elements and will set context.registerAccount to sessionStorage, and subsequently pull from it if required */
-/* Context import for registerAccount and the useState set function   Its then set into context var for use, so registerAccount would be context.registerAccount here and anywhere else you use it */
+import useRememberValues from "../components/custom-hooks/useRememberValues.hook";
+/* Registration Context */
 import { RegistrationContext } from "../components/context/RegistrationContext.context";
 
 function App() {
-  //Global reg object input
+  //Global Registration Object
   const context = useContext(RegistrationContext);
 
-  //GenericInput hooks imports
+  //GenericInput customHook imports
   const { input, inputTypeScrape, onGenericInputChange, settingFormOneValues } =
-    useOnGenericInputChange();
+    useInputChanges();
 
   //HandleClicks customHook imports
   const {
@@ -54,13 +53,14 @@ function App() {
     validateRehomingFee,
   } = useFormValidations();
 
+  const { restorePropsValues, preselectedUser } = useRememberValues();
   /************************************************/
 
   /****************** USE EFFECTS ******************/
 
   /* TO VALIDATE INPUTS */
   useEffect(() => {
-    /* To dynamically refresh on registerAccount change and/or if handleViewClickNext function is ran - this will re-run the handleTwoView() to validate inputs and subsequent message displays*/
+    /* To dynamically refresh on registerAccount value change and/or if handleViewClickNext function is ran - this will re-render to validate inputs and subsequent message displays*/
     handleValidations();
   }, [context.registerAccount, handleViewClickNext, handleViewClickBack]);
 
@@ -73,7 +73,6 @@ function App() {
   /***********************************************/
   function returnRegistrationStage(view) {
     /* Switch case to update the useState, so when a button is clicked, the appropriate useState is set to render the required view  */
-    /* The returnRegistrationStage function is taking the view variable from the useState declared at the top of the doc, and assessing what is within the view variable. If the view variable contains "1", return the loginRegister component, and same for the other cases. This is done through a switch case. In order for the view variable to actually change however, this happens within the NextElement and BackElement.js as view + 1 / - 1 respectively. */
     switch (view) {
       case 1:
         return (
@@ -99,6 +98,7 @@ function App() {
             input={input}
             view={view}
             inputTypeScrape={inputTypeScrape}
+            preselectedUser={preselectedUser}
           />
         );
       case 4:
@@ -116,6 +116,7 @@ function App() {
             validateUserPassword={validateUserPassword}
             validateUserPasswordConfirm={validateUserPasswordConfirm}
             inputTypeScrape={inputTypeScrape}
+            restorePropsValues={restorePropsValues}
           />
         );
       case 5:
@@ -140,6 +141,7 @@ function App() {
             activeProtectionBarrier={activeProtectionBarrier}
             validateAdoptionFoster={validateAdoptionFoster}
             validateRehomingFee={validateRehomingFee}
+            restorePropsValues={restorePropsValues}
           />
         );
 
@@ -147,7 +149,7 @@ function App() {
         return <HomeView />;
 
       default:
-        return <div className="whoops"> Whoops. </div>;
+        return <div className="whoops"> Darn it, something went wrong. </div>;
     }
   }
 

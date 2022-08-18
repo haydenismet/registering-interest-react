@@ -29,6 +29,7 @@ export default function RegistrationThreeView(props) {
     validateRehomingFee,
     handleViewClickBack,
     handleViewClickNext,
+    restorePropsValues,
   } = props;
 
   const locationOptions = [
@@ -146,6 +147,7 @@ export default function RegistrationThreeView(props) {
               onGenericInputChange={onGenericInputChange}
               input={input}
               inputTypeScrape={inputTypeScrape}
+              restorePropsValues={restorePropsValues}
             />
             <div className="arc_form_validation">
               {context.registerAccount.user_location !== null ? (
@@ -170,6 +172,7 @@ export default function RegistrationThreeView(props) {
               onGenericInputChange={onGenericInputChange}
               input={input}
               inputTypeScrape={inputTypeScrape}
+              restorePropsValues={restorePropsValues}
             />
             <div className="arc_form_validation">
               {context.registerAccount.user_distance !== null ? (
@@ -183,7 +186,7 @@ export default function RegistrationThreeView(props) {
                 )
               ) : null}
             </div>
-            <div class="arc_choice_container">
+            <div className="arc_choice_container">
               <ButtonToggleElement
                 buttonQuestion={
                   context.registerAccount.user_type === "Personal"
@@ -221,6 +224,7 @@ export default function RegistrationThreeView(props) {
                 onGenericInputChange={onGenericInputChange}
                 input={input}
                 inputTypeScrape={inputTypeScrape}
+                restorePropsValues={restorePropsValues}
               />
               {context.registerAccount.rehoming_fee !== null ? (
                 !validateRehomingFee ? (

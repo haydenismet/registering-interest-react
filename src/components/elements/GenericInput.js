@@ -1,5 +1,4 @@
 import React from "react";
-import useOnGenericInputChange from "../custom-hooks/useOnGenericInputChange.hook";
 
 export default function GenericInput(props) {
   const {
@@ -11,9 +10,10 @@ export default function GenericInput(props) {
     onGenericInputChange,
     optionValue,
     view,
+    restorePropsValues,
   } = props;
 
-  const { restorePropsValues } = useOnGenericInputChange();
+  //const { restorePropsValues } = useRememberValues();
 
   return (
     <>

@@ -5,8 +5,7 @@ import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 export default function NextElement(props) {
   let [info, setInfo] = useState(false);
 
-  const { handleViewClickNext, view, isDisabled, nextCopy, onAccountRegister } =
-    props;
+  const { handleViewClickNext, view, isDisabled, nextCopy } = props;
 
   return (
     <>

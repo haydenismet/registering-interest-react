@@ -1,5 +1,4 @@
 import React from "react";
-import useOnGenericInputChange from "../custom-hooks/useOnGenericInputChange.hook";
 
 export default function RadioButtonElement(props) {
   const {
@@ -9,8 +8,8 @@ export default function RadioButtonElement(props) {
     radioId,
     radioCopy,
     onGenericInputChange,
+    preselectedUser,
   } = props;
-  const { preselectedUser } = useOnGenericInputChange();
   return (
     <>
       <input

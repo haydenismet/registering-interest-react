@@ -12,6 +12,7 @@ export default function RegistrationOneView(props) {
     handleViewClickBack,
     view,
     onGenericInputChange,
+    preselectedUser,
   } = props;
 
   return (
@@ -28,6 +29,7 @@ export default function RegistrationOneView(props) {
             radioLabel="arc_org_id"
             radioId="arc_org_id"
             radioCopy="Commercial"
+            preselectedUser={preselectedUser}
           />
 
           <div className="arc_registration_one_org_desc">
@@ -43,6 +45,7 @@ export default function RegistrationOneView(props) {
             radioLabel="arc_user_id"
             radioId="arc_user_id"
             radioCopy="Homeowner"
+            preselectedUser={preselectedUser}
           />
 
           <div className="arc_registration_one_user_desc">
