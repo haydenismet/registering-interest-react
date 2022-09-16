@@ -23,11 +23,11 @@ export default function HomeView() {
     password: md5(registerAccount.password),
     user_location: registerAccount.user_location,
     user_distance: registerAccount.user_distance,
-    rehoming_fee: registerAccount.rehoming_fee,
+    user_tier: registerAccount.user_tier,
     knight_watch: registerAccount.knight_watch,
     protection_barrier: registerAccount.protection_barrier,
-    cat: registerAccount.cat,
-    dog: registerAccount.dog,
+    attack_mode: registerAccount.attack_mode,
+    defense_mode: registerAccount.defense_mode,
   });
 
   return (

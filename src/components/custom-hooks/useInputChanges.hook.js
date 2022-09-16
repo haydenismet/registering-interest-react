@@ -67,7 +67,7 @@ export default function useOnGenericInputChange() {
       case "arc_fee_label":
         return context.setRegisterAccount({
           ...context.registerAccount,
-          rehoming_fee: input,
+          user_tier: input,
         });
       case "arc_reg_charity":
         return context.setRegisterAccount({

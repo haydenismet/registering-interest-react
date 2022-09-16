@@ -14,13 +14,13 @@ function RegistrationProvider(props) {
     confirm_password: null,
     user_location: null,
     user_distance: null,
-    rehoming_fee: null,
+    user_tier: null,
     knight_watch: false,
     protection_barrier: false,
-    cat: false,
-    dog: false,
+    attack_mode: false,
+    defense_mode: false,
   });
-
+  console.log(props);
   const value = {
     registerAccount: registerAccount,
     setRegisterAccount: setRegisterAccount,

@@ -29,12 +29,12 @@ function App() {
     view,
     handleViewClickBack,
     handleViewClickNext,
-    handleClickToggleDog,
+    handleClickToggleDefenseMode,
     handleClickToggleCat,
     handleClickToggleAdoption,
     handleClickToggleFoster,
-    activeDog,
-    activeCat,
+    attackMode,
+    defenseMode,
     activeKnightWatch,
     activeProtectionBarrier,
   } = useHandleClicks();
@@ -51,7 +51,7 @@ function App() {
     validateUserDistance,
     validateCatDog,
     validateAdoptionFoster,
-    validateRehomingFee,
+    validateUserTier,
   } = useFormValidations();
 
   const { restorePropsValues, preselectedUser } = useRememberValues();
@@ -129,22 +129,22 @@ function App() {
             handleViewClickNext={handleViewClickNext}
             handleViewClickBack={handleViewClickBack}
             onGenericInputChange={onGenericInputChange}
-            handleClickToggleDog={handleClickToggleDog}
+            handleClickToggleDefenseMode={handleClickToggleDefenseMode}
             handleClickToggleCat={handleClickToggleCat}
             handleClickToggleAdoption={handleClickToggleAdoption}
             handleClickToggleFoster={handleClickToggleFoster}
-            activeDog={activeDog}
+            defenseMode={defenseMode}
             input={input}
             view={view}
             inputTypeScrape={inputTypeScrape}
             validateUserLocation={validateUserLocation}
             validateUserDistance={validateUserDistance}
-            activeCat={activeCat}
+            attackMode={attackMode}
             validateCatDog={validateCatDog}
             activeKnightWatch={activeKnightWatch}
             activeProtectionBarrier={activeProtectionBarrier}
             validateAdoptionFoster={validateAdoptionFoster}
-            validateRehomingFee={validateRehomingFee}
+            validateUserTier={validateUserTier}
             locationOptions={locationOptions}
             distanceOptions={distanceOptions}
             tierValue={tierValue}

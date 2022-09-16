@@ -14,7 +14,7 @@ export default function useFormValidations() {
     useState(false);
   let [validateUserLocation, setValidateUserLocation] = useState(false);
   let [validateUserDistance, setValidateUserDistance] = useState(false);
-  let [validateRehomingFee, setValidateRehomingFee] = useState(false);
+  let [validateUserTier, setValidateUserTier] = useState(false);
   let [validateCatDog, setValidateCatDog] = useState(false);
   let [validateAdoptionFoster, setValidateAdoptionFoster] = useState(false);
   /*********************************/
@@ -120,27 +120,27 @@ export default function useFormValidations() {
     }
   }
 
-  function validateRehomingFeeFunction() {
-    if (context.registerAccount.rehoming_fee !== null) {
+  function validateUserTierFunction() {
+    if (context.registerAccount.user_tier !== null) {
       if (
-        context.registerAccount.rehoming_fee !== "" &&
-        context.registerAccount.rehoming_fee !== "Please Select"
+        context.registerAccount.user_tier !== "" &&
+        context.registerAccount.user_tier !== "Please Select"
       ) {
-        setValidateRehomingFee(true);
+        setValidateUserTier(true);
       } else {
-        setValidateRehomingFee(false);
+        setValidateUserTier(false);
       }
     }
   }
 
   function validateCatDogFunction() {
     if (
-      context.registerAccount.cat !== null &&
-      context.registerAccount.dog !== null
+      context.registerAccount.attack_mode !== null &&
+      context.registerAccount.defense_mode !== null
     ) {
       if (
-        context.registerAccount.cat === false &&
-        context.registerAccount.dog === false
+        context.registerAccount.attack_mode === false &&
+        context.registerAccount.defense_mode === false
       ) {
         setValidateCatDog(false);
       } else {
@@ -180,7 +180,7 @@ export default function useFormValidations() {
     validateUserDistanceFunction();
     validateCatDogFunction();
     validateAdoptFosterFunction();
-    validateRehomingFeeFunction();
+    validateUserTierFunction();
   }
   /**************************************************/
 
@@ -195,6 +195,6 @@ export default function useFormValidations() {
     validateUserDistance,
     validateCatDog,
     validateAdoptionFoster,
-    validateRehomingFee,
+    validateUserTier,
   };
 }

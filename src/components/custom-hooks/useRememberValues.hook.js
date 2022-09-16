@@ -34,7 +34,7 @@ export default function useRememberValues(props) {
           return value;
         }
 
-        if (key === "rehoming_fee" && param === "arc_fee_label") {
+        if (key === "user_tier" && param === "arc_fee_label") {
           return value;
         }
 

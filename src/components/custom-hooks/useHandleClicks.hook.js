@@ -3,8 +3,8 @@ import { RegistrationContext } from "../context/RegistrationContext.context";
 export default function useHandleClicks() {
   const context = useContext(RegistrationContext);
   let [view, setView] = useState(1);
-  let [activeDog, setActiveDog] = useState(true);
-  let [activeCat, setActiveCat] = useState(true);
+  let [defenseMode, setDefenseMode] = useState(true);
+  let [attackMode, setAttackMode] = useState(true);
   let [activeKnightWatch, setActiveKnightWatch] = useState(true);
   let [activeProtectionBarrier, setActiveProtectionBarrier] = useState(true);
   function handleViewClickNext() {
@@ -19,14 +19,20 @@ export default function useHandleClicks() {
     }
   }
 
-  function handleClickToggleDog() {
-    setActiveDog(!activeDog);
-    context.setRegisterAccount({ ...context.registerAccount, dog: activeDog });
+  function handleClickToggleDefenseMode() {
+    setDefenseMode(!defenseMode);
+    context.setRegisterAccount({
+      ...context.registerAccount,
+      defense_mode: defenseMode,
+    });
   }
 
   function handleClickToggleCat() {
-    setActiveCat(!activeCat);
-    context.setRegisterAccount({ ...context.registerAccount, cat: activeCat });
+    setAttackMode(!attackMode);
+    context.setRegisterAccount({
+      ...context.registerAccount,
+      attack_mode: attackMode,
+    });
   }
 
   function handleClickToggleAdoption() {
@@ -50,9 +56,9 @@ export default function useHandleClicks() {
     setView,
     handleViewClickBack,
     handleViewClickNext,
-    handleClickToggleDog,
-    activeDog,
-    activeCat,
+    handleClickToggleDefenseMode,
+    defenseMode,
+    attackMode,
     handleClickToggleCat,
     handleClickToggleAdoption,
     handleClickToggleFoster,

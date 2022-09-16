@@ -16,17 +16,17 @@ export default function RegistrationThreeView(props) {
     onGenericInputChange,
     validateUserLocation,
     validateUserDistance,
-    handleClickToggleDog,
-    activeDog,
+    handleClickToggleDefenseMode,
+    defenseMode,
     handleClickToggleCat,
-    activeCat,
+    attackMode,
     validateCatDog,
     handleClickToggleAdoption,
     handleClickToggleFoster,
     activeKnightWatch,
     activeProtectionBarrier,
     validateAdoptionFoster,
-    validateRehomingFee,
+    validateUserTier,
     handleViewClickBack,
     handleViewClickNext,
     locationOptions,
@@ -133,8 +133,8 @@ export default function RegistrationThreeView(props) {
                 inputTypeScrape={inputTypeScrape}
                 restorePropsValues={restorePropsValues}
               />
-              {context.registerAccount.rehoming_fee !== null ? (
-                !validateRehomingFee ? (
+              {context.registerAccount.user_tier !== null ? (
+                !validateUserTier ? (
                   <div className="arc_form_validation">Select atleast one</div>
                 ) : (
                   <FontAwesomeIcon
@@ -151,13 +151,13 @@ export default function RegistrationThreeView(props) {
                     ? "What is more important for your house protection?"
                     : "What is more important for your commercial property?"
                 }
-                handleClickToggle={handleClickToggleDog}
-                active={activeDog}
+                handleClickToggle={handleClickToggleCat}
+                active={attackMode}
                 idAndName="Attacc"
               />
               <ButtonToggleElement
-                handleClickToggle={handleClickToggleCat}
-                active={activeCat}
+                handleClickToggle={handleClickToggleDefenseMode}
+                active={defenseMode}
                 idAndName="Protecc"
               />
               {!validateCatDog ? (
@@ -184,6 +184,7 @@ export default function RegistrationThreeView(props) {
             isDisabled={
               validateUserLocation &&
               validateUserDistance &&
+              validateUserTier &&
               validateAdoptionFoster &&
               validateCatDog
                 ? false
