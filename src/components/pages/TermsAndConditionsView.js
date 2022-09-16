@@ -30,9 +30,9 @@ export default function TermsAndConditionsView(props) {
             Policy before continuing.
           </h5>
         </div>
-        <div className="arc_t_c_element_end">
+        {/*  <div className="arc_t_c_element_end">
           <TermsAndConditionsElement />
-        </div>
+        </div>*/}
       </div>
       <div className="arc_button_container">
         <BackElement

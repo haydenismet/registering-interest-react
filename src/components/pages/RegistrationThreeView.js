@@ -18,11 +18,11 @@ export default function RegistrationThreeView(props) {
     validateUserDistance,
     handleClickToggleDefenseMode,
     defenseMode,
-    handleClickToggleCat,
+    handleClickToggleAttackMode,
     attackMode,
     validateCatDog,
-    handleClickToggleAdoption,
-    handleClickToggleFoster,
+    handleClickToggleKnightWatch,
+    handleClickToggleProtectionBarrier,
     activeKnightWatch,
     activeProtectionBarrier,
     validateAdoptionFoster,
@@ -100,12 +100,12 @@ export default function RegistrationThreeView(props) {
                     ? "What cover options would you like for your home?"
                     : "What cover options would you like for your commercial property?"
                 }
-                handleClickToggle={handleClickToggleAdoption}
+                handleClickToggle={handleClickToggleKnightWatch}
                 active={activeKnightWatch}
                 idAndName="Patrol"
               />
               <ButtonToggleElement
-                handleClickToggle={handleClickToggleFoster}
+                handleClickToggle={handleClickToggleProtectionBarrier}
                 active={activeProtectionBarrier}
                 idAndName="Sentry"
               />
@@ -151,7 +151,7 @@ export default function RegistrationThreeView(props) {
                     ? "What is more important for your house protection?"
                     : "What is more important for your commercial property?"
                 }
-                handleClickToggle={handleClickToggleCat}
+                handleClickToggle={handleClickToggleAttackMode}
                 active={attackMode}
                 idAndName="Attacc"
               />

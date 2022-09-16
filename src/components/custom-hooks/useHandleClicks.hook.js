@@ -27,7 +27,7 @@ export default function useHandleClicks() {
     });
   }
 
-  function handleClickToggleCat() {
+  function handleClickToggleAttackMode() {
     setAttackMode(!attackMode);
     context.setRegisterAccount({
       ...context.registerAccount,
@@ -35,7 +35,7 @@ export default function useHandleClicks() {
     });
   }
 
-  function handleClickToggleAdoption() {
+  function handleClickToggleKnightWatch() {
     setActiveKnightWatch(!activeKnightWatch);
     context.setRegisterAccount({
       ...context.registerAccount,
@@ -43,7 +43,7 @@ export default function useHandleClicks() {
     });
   }
 
-  function handleClickToggleFoster() {
+  function handleClickToggleProtectionBarrier() {
     setActiveProtectionBarrier(!activeProtectionBarrier);
     context.setRegisterAccount({
       ...context.registerAccount,
@@ -59,9 +59,9 @@ export default function useHandleClicks() {
     handleClickToggleDefenseMode,
     defenseMode,
     attackMode,
-    handleClickToggleCat,
-    handleClickToggleAdoption,
-    handleClickToggleFoster,
+    handleClickToggleAttackMode,
+    handleClickToggleKnightWatch,
+    handleClickToggleProtectionBarrier,
     activeKnightWatch,
     activeProtectionBarrier,
   };

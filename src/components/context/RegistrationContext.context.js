@@ -20,7 +20,7 @@ function RegistrationProvider(props) {
     attack_mode: false,
     defense_mode: false,
   });
-  console.log(props);
+
   const value = {
     registerAccount: registerAccount,
     setRegisterAccount: setRegisterAccount,

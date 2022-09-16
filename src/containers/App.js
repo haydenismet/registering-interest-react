@@ -30,9 +30,9 @@ function App() {
     handleViewClickBack,
     handleViewClickNext,
     handleClickToggleDefenseMode,
-    handleClickToggleCat,
-    handleClickToggleAdoption,
-    handleClickToggleFoster,
+    handleClickToggleAttackMode,
+    handleClickToggleKnightWatch,
+    handleClickToggleProtectionBarrier,
     attackMode,
     defenseMode,
     activeKnightWatch,
@@ -130,9 +130,11 @@ function App() {
             handleViewClickBack={handleViewClickBack}
             onGenericInputChange={onGenericInputChange}
             handleClickToggleDefenseMode={handleClickToggleDefenseMode}
-            handleClickToggleCat={handleClickToggleCat}
-            handleClickToggleAdoption={handleClickToggleAdoption}
-            handleClickToggleFoster={handleClickToggleFoster}
+            handleClickToggleAttackMode={handleClickToggleAttackMode}
+            handleClickToggleKnightWatch={handleClickToggleKnightWatch}
+            handleClickToggleProtectionBarrier={
+              handleClickToggleProtectionBarrier
+            }
             defenseMode={defenseMode}
             input={input}
             view={view}

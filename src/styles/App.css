@@ -820,3 +820,20 @@ label.arc_generic_label {
 }
 
 /***********************************/
+
+
+
+/***********MOBILE STYLES********/
+@media screen and (max-width:430px) {
+  .arc_container {
+    width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+    border-radius: 0px;
+    position: relative;
+  }
+}
+/*******************************/
