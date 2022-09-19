@@ -686,6 +686,11 @@ label.arc_generic_label {
   
 }
 
+.arc_pet_goodbye div {
+  font-size:1rem;
+  margin-top:0.5rem;
+}
+
 .arc_pet_org {
   font-size: 1.6rem;
   margin:1rem 0;

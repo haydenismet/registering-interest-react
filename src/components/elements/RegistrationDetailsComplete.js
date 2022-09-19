@@ -60,6 +60,9 @@ export default function RegistrationDetailsComplete(props) {
         </div>
         <div className="arc_pet_goodbye">
           <b>See meow soon.</b>
+          <div>
+            * Firebase read/write is disabled unless a demo is requested.
+          </div>
         </div>
       </div>
     </>
