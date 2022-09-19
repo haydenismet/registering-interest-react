@@ -7,27 +7,27 @@ export default function RegistrationDetailsComplete(props) {
     <>
       <RegistrationLoginHeaderElement />
       <div className="arc_content_container_end">
-        <div className="arc_pet_card_details">
-          <div className="arc_pet_name">
+        <div className="arc_complete_details">
+          <div className="arc_complete_name">
             <b>Thanks, {userDetails.name}</b>
           </div>
           <div className="arc_pet_org">
             Your details have been sent to our Firebase.
           </div>
-          <div className="arc_pet_card_likes_details">
-            <div className="arc_pet_card_detail_container">
-              <span className="arc_pet_card_detail_age arc_detail_styles">
+          <div className="arc_pet_completed_details">
+            <div className="arc_pet_completed_detail_container">
+              <span className="arc_pet_completed_detail_safe arc_detail_styles">
                 Safe
               </span>
-              <span className="arc_pet_card_detail_size arc_detail_styles">
+              <span className="arc_pet_completed_detail_secure arc_detail_styles">
                 Secure
               </span>
-              <span className="arc_pet_card_detail_gender arc_detail_styles">
+              <span className="arc_pet_completed_detail_fluffy arc_detail_styles">
                 Fluffy
               </span>
             </div>
           </div>
-          <div className="arc_pet_card_full_description">
+          <div className="arc_pet_completed_full_description">
             <div className="arc_pet_org">
               <b>What's next?</b>
             </div>
@@ -45,7 +45,7 @@ export default function RegistrationDetailsComplete(props) {
           <div className="arc_pet_org">
             <b>Your details</b>
           </div>
-          <div className="arc_pet_card_full_points">
+          <div className="arc_pet_completed_full_points">
             <div>
               <h5>Name</h5>
               <p>{userDetails.name}</p>

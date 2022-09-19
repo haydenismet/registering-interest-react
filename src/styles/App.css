@@ -666,7 +666,7 @@ label.arc_generic_label {
 /*****************************************/
 
 
-/********** PET CARD ELEMENT ************/
+/********** REG COMPLETE ************/
 
 .arc_pet_card_container {
   display: block;
@@ -675,7 +675,7 @@ label.arc_generic_label {
   margin-top: 1rem;
 }
 
-.arc_pet_name {
+.arc_complete_name {
   font-size: 2rem;
   margin-top: 1rem;
 }
@@ -705,13 +705,13 @@ label.arc_generic_label {
 
 
 
-.arc_pet_card_likes_details {
+.arc_pet_completed_details {
 
   font-size: 1.4rem;
   margin-top: 0.6rem;
 }
 
-.arc_pet_card_detail_container {
+.arc_pet_completed_detail_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -753,15 +753,15 @@ label.arc_generic_label {
   margin-right: 0;
 }
 
-.arc_pet_card_detail_age {
+.arc_pet_completed_detail_safe {
   background-color: #B7AAE3;
 }
 
-.arc_pet_card_detail_size {
+.arc_pet_completed_detail_secure {
   background-color: #F78BA6;
 }
 
-.arc_pet_card_detail_gender {
+.arc_pet_completed_detail_fluffy {
   background-color: #F0BA89;
 }
 
@@ -785,23 +785,23 @@ label.arc_generic_label {
 /**************************************/
 
 
-/******** FULL DETAILS PET CARD ******/
-.arc_pet_card_full_description {
+/******** FULL DETAILS REG COMPLETE ******/
+.arc_pet_completed_full_description {
   margin-top: 2rem;
 
 }
 
-.arc_pet_card_full_points,
-.arc_pet_card_full_description {
+.arc_pet_completed_full_points,
+.arc_pet_completed_full_description {
   
   color: #6b6b6b;
 }
 
-.arc_pet_card_full_points p {
+.arc_pet_completed_full_points p {
   font-size: 1.2rem;
 }
 
-.arc_pet_card_full_description p {
+.arc_pet_completed_full_description p {
   margin: 1.5rem 0;
   font-size:1.3rem;
 
