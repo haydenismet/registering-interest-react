@@ -20,12 +20,12 @@ export default function RegistrationThreeView(props) {
     defenseMode,
     handleClickToggleAttackMode,
     attackMode,
-    validateCatDog,
+    validateAttackDefense,
     handleClickToggleKnightWatch,
     handleClickToggleProtectionBarrier,
     activeKnightWatch,
     activeProtectionBarrier,
-    validateAdoptionFoster,
+    validateWatchBarrier,
     validateUserTier,
     handleViewClickBack,
     handleViewClickNext,
@@ -109,7 +109,7 @@ export default function RegistrationThreeView(props) {
                 active={activeProtectionBarrier}
                 idAndName="Sentry"
               />
-              {!validateAdoptionFoster ? (
+              {!validateWatchBarrier ? (
                 <div className="arc_form_validation">Select atleast one</div>
               ) : (
                 <FontAwesomeIcon
@@ -160,7 +160,7 @@ export default function RegistrationThreeView(props) {
                 active={defenseMode}
                 idAndName="Protecc"
               />
-              {!validateCatDog ? (
+              {!validateAttackDefense ? (
                 <div className="arc_form_validation">Select atleast one</div>
               ) : (
                 <FontAwesomeIcon
@@ -185,8 +185,8 @@ export default function RegistrationThreeView(props) {
               validateUserLocation &&
               validateUserDistance &&
               validateUserTier &&
-              validateAdoptionFoster &&
-              validateCatDog
+              validateWatchBarrier &&
+              validateAttackDefense
                 ? false
                 : true
             }

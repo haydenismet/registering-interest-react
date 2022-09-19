@@ -49,8 +49,8 @@ function App() {
     validateUserPasswordConfirm,
     validateUserLocation,
     validateUserDistance,
-    validateCatDog,
-    validateAdoptionFoster,
+    validateAttackDefense,
+    validateWatchBarrier,
     validateUserTier,
   } = useFormValidations();
 
@@ -142,10 +142,10 @@ function App() {
             validateUserLocation={validateUserLocation}
             validateUserDistance={validateUserDistance}
             attackMode={attackMode}
-            validateCatDog={validateCatDog}
+            validateAttackDefense={validateAttackDefense}
             activeKnightWatch={activeKnightWatch}
             activeProtectionBarrier={activeProtectionBarrier}
-            validateAdoptionFoster={validateAdoptionFoster}
+            validateWatchBarrier={validateWatchBarrier}
             validateUserTier={validateUserTier}
             locationOptions={locationOptions}
             distanceOptions={distanceOptions}

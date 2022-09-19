@@ -15,8 +15,8 @@ export default function useFormValidations() {
   let [validateUserLocation, setValidateUserLocation] = useState(false);
   let [validateUserDistance, setValidateUserDistance] = useState(false);
   let [validateUserTier, setValidateUserTier] = useState(false);
-  let [validateCatDog, setValidateCatDog] = useState(false);
-  let [validateAdoptionFoster, setValidateAdoptionFoster] = useState(false);
+  let [validateAttackDefense, setValidateAttackDefense] = useState(false);
+  let [validateWatchBarrier, setValidateWatchBarrier] = useState(false);
   /*********************************/
 
   /************** FORM VALIDATION ****************/
@@ -133,7 +133,7 @@ export default function useFormValidations() {
     }
   }
 
-  function validateCatDogFunction() {
+  function validateAttackDefenseFunction() {
     if (
       context.registerAccount.attack_mode !== null &&
       context.registerAccount.defense_mode !== null
@@ -142,14 +142,14 @@ export default function useFormValidations() {
         context.registerAccount.attack_mode === false &&
         context.registerAccount.defense_mode === false
       ) {
-        setValidateCatDog(false);
+        setValidateAttackDefense(false);
       } else {
-        setValidateCatDog(true);
+        setValidateAttackDefense(true);
       }
     }
   }
 
-  function validateAdoptFosterFunction() {
+  function validateWatchBarrierFunction() {
     if (
       context.registerAccount.knight_watch !== null &&
       context.registerAccount.protection_barrier !== null
@@ -158,9 +158,9 @@ export default function useFormValidations() {
         context.registerAccount.knight_watch === false &&
         context.registerAccount.protection_barrier === false
       ) {
-        setValidateAdoptionFoster(false);
+        setValidateWatchBarrier(false);
       } else {
-        setValidateAdoptionFoster(true);
+        setValidateWatchBarrier(true);
       }
     }
   }
@@ -178,8 +178,8 @@ export default function useFormValidations() {
     validateUserPasswordConfirmFunction();
     validateUserLocationFunction();
     validateUserDistanceFunction();
-    validateCatDogFunction();
-    validateAdoptFosterFunction();
+    validateAttackDefenseFunction();
+    validateWatchBarrierFunction();
     validateUserTierFunction();
   }
   /**************************************************/
@@ -193,8 +193,8 @@ export default function useFormValidations() {
     validateUserPasswordConfirm,
     validateUserLocation,
     validateUserDistance,
-    validateCatDog,
-    validateAdoptionFoster,
+    validateAttackDefense,
+    validateWatchBarrier,
     validateUserTier,
   };
 }

@@ -13,8 +13,6 @@ export default function GenericInput(props) {
     restorePropsValues,
   } = props;
 
-  //const { restorePropsValues } = useRememberValues();
-
   return (
     <>
       <div className="arc_generic_input_container">

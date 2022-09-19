@@ -1,6 +1,5 @@
 import React from "react";
 import RegistrationLoginHeaderElement from "../elements/RegistrationLoginHeaderElement.js";
-import TermsAndConditionsElement from "../elements/TermsAndConditionsElement.js";
 import NextElement from "../elements/NextElement.js";
 import BackElement from "../elements/BackElement.js";
 export default function TermsAndConditionsView(props) {
@@ -30,7 +29,8 @@ export default function TermsAndConditionsView(props) {
             Policy before continuing.
           </h5>
         </div>
-        {/*  <div className="arc_t_c_element_end">
+        {/* if req - import and add terms and conditions component -
+         <div className="arc_t_c_element_end">
           <TermsAndConditionsElement />
         </div>*/}
       </div>

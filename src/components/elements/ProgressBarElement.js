@@ -1,4 +1,3 @@
-/*ELEMENTS FOLDER - Generic elements that can be reusable for various parts of the app */
 import React from "react";
 export default function ProgressBarElement(props) {
   const { stage } = props;
