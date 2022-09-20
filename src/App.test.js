@@ -47,7 +47,29 @@ test("Terms and Conditions Page Assertions", () => {
   ).toBeInTheDocument();
 });
 
-test("Input assertions", () => {});
+test("Input assertions", () => {
+  render(
+    <RegistrationProvider>
+      <App />
+    </RegistrationProvider>
+  );
+  const registerButton = screen.getByText("Register");
+  userEvent.click(registerButton);
+  const agreeButton = screen.getByText("Agree");
+  userEvent.click(agreeButton);
+  const selectOption = screen.getByLabelText("Commercial");
+  userEvent.click(selectOption);
+  const continueButton = screen.getByText("continue");
+  userEvent.click(continueButton);
+
+  expect(screen.getByLabelText("Organisation Name")).toHaveClass(
+    "arc_generic_input Organisation Name"
+  );
+
+  expect(screen.getByLabelText("Email")).toHaveClass("arc_generic_input Email");
+});
 
 // add a reverse of traversing the back buttons
 // set up buttons with like a beforeeach?
+// loops or length checks to avoid repetition of expects?
+// utilise Jest and react testing library in tandem?
