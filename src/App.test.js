@@ -126,3 +126,6 @@ test("Input Email", () => {
 // utilisation of await async?
 //const emailInput = screen.getByLabelText("Email");
 //userEvent.click(emailInput);
+// validate context obj for each test
+// validate overall context obj
+// render specific part of the orch with the context obj pre-filled so you can do the subsequent slide, i.e the second slide of questions
