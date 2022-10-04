@@ -113,36 +113,39 @@ test("Context Assertions", async () => {
 /************************************************/
 
 /******** BUTTON INPUT SETUP ********/
+//beforeeach wont work currently - need to return each func?
 
-let nameInput = (labelValue) => {
-  const input = screen.getByLabelText(labelValue);
-  return {
-    input,
+beforeEach(() => {
+  let nameInput = (labelValue) => {
+    let input = screen.getByLabelText(labelValue);
+    return {
+      input,
+    };
   };
-};
 
-const landingButtons = () => {
-  const registerButton = screen.getByText("Register");
-  return {
-    registerButton,
+  const landingButtons = () => {
+    const registerButton = screen.getByText("Register");
+    return {
+      registerButton,
+    };
   };
-};
 
-const termsAndConditionsButtons = () => {
-  const agreeButton = screen.getByText("Agree");
-  return {
-    agreeButton,
+  const termsAndConditionsButtons = () => {
+    const agreeButton = screen.getByText("Agree");
+    return {
+      agreeButton,
+    };
   };
-};
 
-const customerTypeButtons = () => {
-  const selectOption = screen.getByLabelText("Commercial");
-  const continueButton = screen.getByText("continue");
-  return {
-    selectOption,
-    continueButton,
+  const customerTypeButtons = () => {
+    const selectOption = screen.getByLabelText("Commercial");
+    const continueButton = screen.getByText("continue");
+    return {
+      selectOption,
+      continueButton,
+    };
   };
-};
+});
 
 /************************************************/
 
@@ -240,11 +243,6 @@ test("Input Email Assertion", () => {
 
 // add a reverse of traversing the back buttons
 // set up buttons with like a beforeeach?
-// loops or length checks to avoid repetition of expects?
-// utilise Jest and react testing library in tandem?
-// utilisation of await async?
-//const emailInput = screen.getByLabelText("Email");
-//userEvent.click(emailInput);
 // validate context obj for each test
 // validate overall context obj
 // render specific part of the orch with the context obj pre-filled so you can do the subsequent slide, i.e the second slide of questions
