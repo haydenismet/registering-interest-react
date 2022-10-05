@@ -5,9 +5,8 @@ import App from "./containers/App.js";
 import { RegistrationContext } from "./components/context/RegistrationContext.context.js";
 import { useContext } from "react";
 import TermsAndConditionsView from "./components/pages/TermsAndConditionsView.js";
-import RegistrationOneView from "./components/pages/RegistrationOneView.js";
 
-/******** AUTH CONTEXT ASSERTIONS ********/
+/******** context validations ********/
 const matchingValues = [
   {
     user_type: "Commercial",
@@ -26,6 +25,7 @@ const matchingValues = [
   },
 ];
 
+/* mock component for context validation */
 const AuthContextAssertions = () => {
   let { registerAccount } = useContext(RegistrationContext);
   registerAccount = [
@@ -46,6 +46,7 @@ const AuthContextAssertions = () => {
     },
   ];
   if (registerAccount) {
+    //console.log(registerAccount[0]);
     return registerAccount.map((item) => {
       return (
         <>
@@ -68,7 +69,8 @@ const AuthContextAssertions = () => {
   }
 };
 
-test("Context Assertions", async () => {
+/* testing context values */
+test("Context Functionality", async () => {
   render(
     <RegistrationProvider>
       <AuthContextAssertions />
@@ -114,7 +116,7 @@ test("Context Assertions", async () => {
 
 /************************************************/
 
-/******** BUTTON INPUT SETUP ********/
+/******** button setup ********/
 
 const landingButtons = () => {
   const registerButton = screen.getByText("Register");
@@ -141,7 +143,7 @@ const customerTypeButtons = () => {
 
 /************************************************/
 
-/******** LANDING PAGE ASSERTIONS ********/
+/******** landing page ********/
 test("Landing Page", async () => {
   render(
     <RegistrationProvider>
@@ -155,6 +157,7 @@ test("Landing Page", async () => {
   expect(screen.getByText("Disclaimer.")).toBeInTheDocument();
 });
 
+/******** terms and conditions page ********/
 test("Terms and Conditions Page", () => {
   render(
     <RegistrationProvider>
@@ -173,28 +176,38 @@ test("Terms and Conditions Page", () => {
   userEvent.click(agreeButton);
 });
 
+/******** user registration flow ********/
 test("User Registration", () => {
   render(
     <RegistrationProvider>
       <App />
     </RegistrationProvider>
   );
+  //register
   const { registerButton } = landingButtons();
   userEvent.click(registerButton);
+
+  //t&cs agree
   const { agreeButton } = termsAndConditionsButtons();
   userEvent.click(agreeButton);
   expect(screen.getByLabelText("Commercial")).toBeInTheDocument();
   expect(screen.getByLabelText("Homeowner")).toBeInTheDocument();
   expect(screen.getByText("continue")).toBeDisabled();
+
+  //select commercial customer
   const { selectOption } = customerTypeButtons();
   userEvent.click(selectOption);
+
   expect(screen.getByText("continue")).not.toBeDisabled();
+
   const { continueButton } = customerTypeButtons();
   userEvent.click(continueButton);
+
   expect(
     screen.getByText(/A few more steps to secure priority access to /)
   ).toBeInTheDocument();
 
+  //answer input questions
   let inputObjs = {
     name: screen.getByLabelText("Organisation Name"),
     email: screen.getByLabelText("Email"),
@@ -206,30 +219,38 @@ test("User Registration", () => {
   fireEvent.change(inputObjs.name, {
     target: { value: "Hayden Ismet Industries" },
   });
+
   expect(inputObjs.name.value).toBe("Hayden Ismet Industries");
   fireEvent.change(inputObjs.email, { target: { value: "h@h.com" } });
+
   expect(inputObjs.email.value).toBe("h@h.com");
   fireEvent.change(inputObjs.confirmEmail, { target: { value: "h@h.com" } });
+
   expect(inputObjs.confirmEmail.value).toBe("h@h.com");
   fireEvent.change(inputObjs.password, {
     target: { value: "whatAInterestingPassword1!" },
   });
+
   expect(inputObjs.password.value).toBe("whatAInterestingPassword1!");
   fireEvent.change(inputObjs.confirmPassword, {
     target: { value: "whatAInterestingPassword1!" },
   });
+
   expect(inputObjs.confirmPassword.value).toBe("whatAInterestingPassword1!");
+
   let submit = screen.getByText("Continue");
   userEvent.click(submit);
+
   expect(
     screen.getByText("Where is your organisation based?")
   ).toBeInTheDocument();
-  //final questions
-  let orgLocation = screen.getByTestId("arc_location_label");
 
+  //answer preference questions
+  let orgLocation = screen.getByTestId("arc_location_label");
   fireEvent.change(orgLocation, {
     target: { value: "West Midlands" },
   });
+
   let orgDistance = screen.getByTestId("arc_rehoming_label");
   fireEvent.change(orgDistance, { target: { value: "2 Miles" } });
 
@@ -249,11 +270,10 @@ test("User Registration", () => {
   let finalReg = screen.getByText("Register");
   expect(finalReg).not.toBeDisabled();
   fireEvent.click(finalReg);
-  expect(screen.getByText("Hayden Ismet Industries")).toBeInTheDocument();
-});
-/************************************************/
 
-// add a reverse of traversing the back buttons
-// validate overall context obj when last test complete?
-// find a way to validate overall context obj when reg complete
-// test error validation?
+  expect(screen.getByText("Hayden Ismet Industries")).toBeInTheDocument();
+  expect(screen.getByText("h@h.com")).toBeInTheDocument();
+  expect(screen.getByText("West Midlands")).toBeInTheDocument();
+});
+
+/************************************************/

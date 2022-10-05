@@ -25,7 +25,7 @@ function RegistrationProvider(props) {
     registerAccount: registerAccount,
     setRegisterAccount: setRegisterAccount,
   };
-  console.log(registerAccount);
+  //console.log(registerAccount);
   return (
     <RegistrationContext.Provider value={value}>
       {props.children}
