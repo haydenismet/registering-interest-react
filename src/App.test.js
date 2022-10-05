@@ -4,6 +4,8 @@ import { RegistrationProvider } from "./components/context/RegistrationContext.c
 import App from "./containers/App.js";
 import { RegistrationContext } from "./components/context/RegistrationContext.context.js";
 import { useContext } from "react";
+import TermsAndConditionsView from "./components/pages/TermsAndConditionsView.js";
+import RegistrationOneView from "./components/pages/RegistrationOneView.js";
 
 /******** AUTH CONTEXT ASSERTIONS ********/
 const matchingValues = [
@@ -113,14 +115,6 @@ test("Context Assertions", async () => {
 /************************************************/
 
 /******** BUTTON INPUT SETUP ********/
-//beforeeach wont work - leave?
-
-let nameInput = (labelValue) => {
-  let input = screen.getByLabelText(labelValue);
-  return {
-    input,
-  };
-};
 
 const landingButtons = () => {
   const registerButton = screen.getByText("Register");
@@ -148,7 +142,7 @@ const customerTypeButtons = () => {
 /************************************************/
 
 /******** LANDING PAGE ASSERTIONS ********/
-test("Landing Page Assertions", async () => {
+test("Landing Page", async () => {
   render(
     <RegistrationProvider>
       <App />
@@ -158,19 +152,16 @@ test("Landing Page Assertions", async () => {
   expect(screen.getByText("Knight Cat")).toHaveClass("arc_header_knightcat");
   expect(screen.getByText("Register")).not.toBeDisabled();
   userEvent.click(registerButton);
-  await waitFor(() => {
-    expect(screen.getByText("Disclaimer.")).toBeInTheDocument();
-  });
+  expect(screen.getByText("Disclaimer.")).toBeInTheDocument();
 });
 
 test("Terms and Conditions Page Assertions", () => {
   render(
     <RegistrationProvider>
-      <App />
+      <TermsAndConditionsView />
     </RegistrationProvider>
   );
-  const { registerButton } = landingButtons();
-  userEvent.click(registerButton);
+
   expect(
     screen.getByText(
       /We highly advise you read our Terms and Conditions and Privacy Policy before continuing./
@@ -180,10 +171,22 @@ test("Terms and Conditions Page Assertions", () => {
   expect(screen.getByText("Agree")).not.toBeDisabled();
   const { agreeButton } = termsAndConditionsButtons();
   userEvent.click(agreeButton);
-  const { selectOption } = customerTypeButtons();
+});
+
+test("User Registration", () => {
+  render(
+    <RegistrationProvider>
+      <App />
+    </RegistrationProvider>
+  );
+  const { registerButton } = landingButtons();
+  userEvent.click(registerButton);
+  const { agreeButton } = termsAndConditionsButtons();
+  userEvent.click(agreeButton);
   expect(screen.getByLabelText("Commercial")).toBeInTheDocument();
   expect(screen.getByLabelText("Homeowner")).toBeInTheDocument();
   expect(screen.getByText("continue")).toBeDisabled();
+  const { selectOption } = customerTypeButtons();
   userEvent.click(selectOption);
   expect(screen.getByText("continue")).not.toBeDisabled();
   const { continueButton } = customerTypeButtons();
@@ -191,56 +194,39 @@ test("Terms and Conditions Page Assertions", () => {
   expect(
     screen.getByText(/A few more steps to secure priority access to /)
   ).toBeInTheDocument();
-});
 
-/************************************************/
+  let inputObjs = {
+    name: screen.getByLabelText("Organisation Name"),
+    email: screen.getByLabelText("Email"),
+    confirmEmail: screen.getByLabelText("Confirm Email"),
+    password: screen.getByLabelText("Password"),
+    confirmPassword: screen.getByLabelText("Confirm Password"),
+  };
 
-/******** INPUT ASSERTIONS ********/
-
-test("Input Name Assertion", () => {
-  render(
-    <RegistrationProvider>
-      <App />
-    </RegistrationProvider>
-  );
-  const { registerButton } = landingButtons();
-  userEvent.click(registerButton);
-  const { agreeButton } = termsAndConditionsButtons();
-  userEvent.click(agreeButton);
-  const { selectOption } = customerTypeButtons();
-  userEvent.click(selectOption);
-  const { continueButton } = customerTypeButtons();
-  userEvent.click(continueButton);
-
-  let { input } = nameInput("Organisation Name");
-  fireEvent.change(input, { target: { value: "Hayden Ismet Industries" } });
-  expect(input.value).toBe("Hayden Ismet Industries");
-});
-
-test("Input Email Assertion", () => {
-  render(
-    <RegistrationProvider>
-      <App />
-    </RegistrationProvider>
-  );
-
-  const { registerButton } = landingButtons();
-  userEvent.click(registerButton);
-  const { agreeButton } = termsAndConditionsButtons();
-  userEvent.click(agreeButton);
-  const { selectOption } = customerTypeButtons();
-  userEvent.click(selectOption);
-  const { continueButton } = customerTypeButtons();
-  userEvent.click(continueButton);
-
-  let { input } = nameInput("Email");
-  fireEvent.change(input, { target: { value: "h@h.com" } });
-  expect(input.value).toBe("h@h.com");
+  fireEvent.change(inputObjs.name, {
+    target: { value: "Hayden Ismet Industries" },
+  });
+  expect(inputObjs.name.value).toBe("Hayden Ismet Industries");
+  fireEvent.change(inputObjs.email, { target: { value: "h@h.com" } });
+  expect(inputObjs.email.value).toBe("h@h.com");
+  fireEvent.change(inputObjs.confirmEmail, { target: { value: "h@h.com" } });
+  expect(inputObjs.confirmEmail.value).toBe("h@h.com");
+  fireEvent.change(inputObjs.password, {
+    target: { value: "whatAInterestingPassword1!" },
+  });
+  expect(inputObjs.password.value).toBe("whatAInterestingPassword1!");
+  fireEvent.change(inputObjs.confirmPassword, {
+    target: { value: "whatAInterestingPassword1!" },
+  });
+  expect(inputObjs.confirmPassword.value).toBe("whatAInterestingPassword1!");
+  let submit = screen.getByText("Continue");
+  userEvent.click(submit);
+  expect(
+    screen.getByText("Where is your organisation based?")
+  ).toBeInTheDocument();
 });
 /************************************************/
 
 // add a reverse of traversing the back buttons
-// set up buttons with like a beforeeach?
-// validate context obj for each test
-// validate overall context obj
-// render specific part of the orch with the context obj pre-filled so you can do the subsequent slide, i.e the second slide of questions
+// validate overall context obj when last test complete?
+// find way to set a object in nameInput
