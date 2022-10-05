@@ -155,7 +155,7 @@ test("Landing Page", async () => {
   expect(screen.getByText("Disclaimer.")).toBeInTheDocument();
 });
 
-test("Terms and Conditions Page Assertions", () => {
+test("Terms and Conditions Page", () => {
   render(
     <RegistrationProvider>
       <TermsAndConditionsView />
@@ -229,4 +229,5 @@ test("User Registration", () => {
 
 // add a reverse of traversing the back buttons
 // validate overall context obj when last test complete?
-// find way to set a object in nameInput
+// find a way to validate overall context obj when reg complete
+// test error validation?
