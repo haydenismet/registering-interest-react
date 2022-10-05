@@ -113,39 +113,37 @@ test("Context Assertions", async () => {
 /************************************************/
 
 /******** BUTTON INPUT SETUP ********/
-//beforeeach wont work currently - need to return each func?
+//beforeeach wont work - leave?
 
-beforeEach(() => {
-  let nameInput = (labelValue) => {
-    let input = screen.getByLabelText(labelValue);
-    return {
-      input,
-    };
+let nameInput = (labelValue) => {
+  let input = screen.getByLabelText(labelValue);
+  return {
+    input,
   };
+};
 
-  const landingButtons = () => {
-    const registerButton = screen.getByText("Register");
-    return {
-      registerButton,
-    };
+const landingButtons = () => {
+  const registerButton = screen.getByText("Register");
+  return {
+    registerButton,
   };
+};
 
-  const termsAndConditionsButtons = () => {
-    const agreeButton = screen.getByText("Agree");
-    return {
-      agreeButton,
-    };
+const termsAndConditionsButtons = () => {
+  const agreeButton = screen.getByText("Agree");
+  return {
+    agreeButton,
   };
+};
 
-  const customerTypeButtons = () => {
-    const selectOption = screen.getByLabelText("Commercial");
-    const continueButton = screen.getByText("continue");
-    return {
-      selectOption,
-      continueButton,
-    };
+const customerTypeButtons = () => {
+  const selectOption = screen.getByLabelText("Commercial");
+  const continueButton = screen.getByText("continue");
+  return {
+    selectOption,
+    continueButton,
   };
-});
+};
 
 /************************************************/
 
