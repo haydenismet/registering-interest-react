@@ -10,6 +10,7 @@ export default function ButtonElement(props) {
       <button
         id={idAndName}
         onClick={handleClickToggle}
+        data-testid={idAndName}
         className={!active ? "arc_animal_selected_reg_3" : null}
       >
         {idAndName}

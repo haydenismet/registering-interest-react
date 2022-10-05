@@ -224,6 +224,32 @@ test("User Registration", () => {
   expect(
     screen.getByText("Where is your organisation based?")
   ).toBeInTheDocument();
+  //final questions
+  let orgLocation = screen.getByTestId("arc_location_label");
+
+  fireEvent.change(orgLocation, {
+    target: { value: "West Midlands" },
+  });
+  let orgDistance = screen.getByTestId("arc_rehoming_label");
+  fireEvent.change(orgDistance, { target: { value: "2 Miles" } });
+
+  let coverOptionOne = screen.getByTestId("Patrol");
+  let coverOptionTwo = screen.getByTestId("Sentry");
+  fireEvent.click(coverOptionOne);
+  fireEvent.click(coverOptionTwo);
+
+  let chosenTier = screen.getByTestId("arc_fee_label");
+  fireEvent.change(chosenTier, { target: { value: "Platinum" } });
+
+  let attacMode = screen.getByTestId("Attacc");
+  let defensMode = screen.getByTestId("Protecc");
+  fireEvent.click(attacMode);
+  fireEvent.click(defensMode);
+
+  let finalReg = screen.getByText("Register");
+  expect(finalReg).not.toBeDisabled();
+  fireEvent.click(finalReg);
+  expect(screen.getByText("Hayden Ismet Industries")).toBeInTheDocument();
 });
 /************************************************/
 

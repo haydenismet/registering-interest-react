@@ -34,6 +34,7 @@ export default function GenericInput(props) {
             <select
               id={labelName}
               className="arc_option_select"
+              data-testid={labelName}
               onChange={onGenericInputChange}
               defaultValue={restorePropsValues(labelName)}
             >
